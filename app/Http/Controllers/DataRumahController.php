@@ -36,7 +36,7 @@ class DataRumahController extends Controller
      */
     public function show(Datarumah $datarumah)
     {
-        //
+        return view('data_rumah.show');
     }
 
     /**

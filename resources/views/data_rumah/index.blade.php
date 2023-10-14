@@ -71,6 +71,10 @@
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li> <button type="button"
+                                                            class="btn btn-default waves-effect m-r-20"
+                                                            onclick="window.open('{{ route('data_rumah.show', 1) }}', '_blank')">Detail</button>
+                                                    </li>
+                                                        <li> <button type="button"
                                                                 class="btn btn-default waves-effect m-r-20"
                                                                 onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
                                                         </li>
