@@ -301,12 +301,16 @@
             </div>
             <!-- #END# Exportable Table -->
 
-            <!-- Advanced Validation -->
-            <div class="row clearfix">
+             <!-- Masked Input -->
+             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>TAMBAH TYPE RUMAH</h2>
+                            <h2>
+                                DATA RUMAH
+                                <small>Taken from <a href="https://github.com/RobinHerbots/jquery.inputmask"
+                                        target="_blank">github.com/RobinHerbots/jquery.inputmask</a></small>
+                            </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
@@ -322,44 +326,104 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <form id="form_advanced_validation" action="{{ route('type_rumah.store') }}" method="POST">
-                                @csrf
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="nama"required>
-                                        <label class="form-label">Nama Type</label>
+                            <div class="demo-masked-input">
+                                <div class="row clearfix">
+                                    <div class="col-md-3">
+                                        <b>Kode Rumah</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">home</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  placeholder="11223344111" class="form-control date"
+                                                    placeholder="Ex: 30/07/2016">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="help-info">Contoh : Type 11181027</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="ukuran" required>
-                                        <label class="form-label">Ukuran</label>
+                                    <div class="col-md-3">
+                                        <b>Type Rumah</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">home</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control" placeholder="11223344111">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="help-info">Contoh : 10 x 10</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="spesifikasi" required>
-                                        <label class="form-label">Spesifikasi</label>
+                                    <div class="col-md-3">
+                                        <b>ID PLN</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">electric_bolt</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control time12"
+                                                    placeholder="11223344111">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="help-info">Contoh : 3 Kamar Tidur, 2 Kamar Mandi dst</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" class="form-control" min="100000" name="harga"
-                                            required>
-                                        <label class="form-label">Harga</label>
+                                    <div class="col-md-3">
+                                        <b>ID PDAM</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">water_drop</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control datetime"
+                                                    placeholder="11223344111">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="help-info">Contoh : 1000000</div>
+                                    <div class="col-md-3">
+                                        <b>Alamat</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">add_location
+                                                </i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control mobile-phone-number"
+                                                    placeholder="11223344111">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <b>Latitude</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">gps_fixed</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control mobile-phone-number"
+                                                    placeholder="11223344111">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <b>Longtitude</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">gps_fixed</i>
+                                            </span>
+                                            <div class="form-line">
+                                                <input type="text"  class="form-control money-dollar"
+                                                    placeholder="11223344111">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <input type="checkbox" id="remember_me_4" class="filled-in">
+                                        <label for="remember_me_4">Remember Me</label>
+                                        <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect">LOGIN</button>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Advanced Validation -->
+            <!-- #END# Masked Input -->
 
             <!-- For Material Design Colors -->
             <!-- Default Size -->

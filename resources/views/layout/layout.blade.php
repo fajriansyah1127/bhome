@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
-    <link rel="icon" href="{{ asset('template/') }}/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://mybirawa.gsd.co.id/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
@@ -23,8 +23,8 @@
     <!-- Animation Css -->
     <link href="{{ asset('template') }}/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Sweetalert Css -->
-    <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    {{-- <!-- Sweetalert Css -->
+    <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" /> --}}
 
     <!-- Morris Chart Css-->
     <link href="{{ asset('template') }}/plugins/morrisjs/morris.css" rel="stylesheet" />

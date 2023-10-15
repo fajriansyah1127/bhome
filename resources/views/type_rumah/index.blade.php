@@ -45,7 +45,7 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    {{-- <tfoot>
                                         <tr>
                                             <th>Nomor Type</th>
                                             <th>Ukuran</th>
@@ -53,13 +53,13 @@
                                             <th>Harga</th>
                                             <th>Action</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> --}}
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
+                                            <td>Type 120</td>
+                                            <td>10 x 12 Meter</td>
+                                            <td>3 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
+                                            <td>13.575.000</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle"
@@ -82,10 +82,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
+                                            <td>Type 150</td>
+                                            <td>10 x 15 Meter</td>
+                                            <td>4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
+                                            <td>19.762.500</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle"
@@ -108,10 +108,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
+                                            <td>Type 200</td>
+                                            <td>10 x 20 Meter</td>
+                                            <td>4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
+                                            <td>19.762.500</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle"
@@ -134,10 +134,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
+                                            <td>Type 90</td>
+                                            <td>10 x 9 Meter</td>
+                                            <td>3 Kamar Tidur, 2 Kamar Mandi, 1 Dapur & Garasi </td>
+                                            <td>7.387.500</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle"
@@ -159,7 +159,6 @@
                                                 </div>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>

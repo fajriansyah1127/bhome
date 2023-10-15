@@ -24,17 +24,18 @@
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="info-box bg-yellow hover-expand-effect hover-zoom-effect">
                         <div class="icon">
-                            <i class="material-icons">home</i>
+                            <a href="{{ route('data_rumah.index') }}">
+                                <i class="material-icons">home</i>
                         </div>
                         <div class="content">
-                            <div class="text"><a href="{{ route('data_rumah.index') }}"></a>JUMLAH RUMAH</div>
+                            <div class="text">JUMLAH RUMAH</div>
                             <div class="number count-to" data-from="0" data-to="125" data-speed="15"
                                 data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="info-box bg-cyan hover-expand-effect hover-zoom-effect">
+                    <div class="info-box bg-green hover-expand-effect hover-zoom-effect">
                         <div class="icon">
                             <i class="material-icons">paid</i>
                         </div>
@@ -46,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="info-box bg-light-green hover-expand-effect hover-zoom-effect">
+                    <div class="info-box bg-red hover-expand-effect hover-zoom-effect">
                         <div class="icon">
                             <i class="material-icons">groups</i>
                         </div>
@@ -469,27 +470,35 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <script>
-        const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
-
-
-        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 17,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        var greenIcon = L.icon({
-            iconUrl: '{{ asset('admin/img/icon_hijau.png') }}',
-            iconSize : [66,66],
-            iconAnchor : [33,66],
-            tooltipAnchor : [33,-30]
-        });
-        var marker = L.marker([-1.251590837460213, 116.86339606535283], {
+        <script>
+            const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
+        
+            const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 17,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+        
+            var greenIcon = L.icon({
+                iconUrl: '{{ asset('admin/img/icon_hijau.png') }}',
+                iconSize: [66, 66],
+                iconAnchor: [33, 66],
+                tooltipAnchor: [33, -30],
+                popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+        
+            // Marker pertama
+            var marker1 = L.marker([-1.251590837460213, 116.86339606535283], {
                 icon: greenIcon,
             })
-            .bindTooltip(`
-        dwad 
-          `)
+            .bindTooltip(`Marker Pertama`)
             .addTo(map);
-    </script>
+        
+            // Marker kedua
+            var marker2 = L.marker([-1.2517088264977783, 116.86359996882781], {
+                icon: greenIcon,
+            })
+            .bindTooltip(`Marker Kedua`)
+            .addTo(map);
+        </script>
+        
 @endpush

@@ -4,7 +4,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="{{ asset('template') }}/images/user.png" width="48" height="48"
+                <img src="https://mybirawa.gsd.co.id/uploads/tenant/1690905078.png" width="100" height="48"
                     alt="User" />
             </div>
             <div class="info-container">

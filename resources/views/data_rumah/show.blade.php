@@ -11,8 +11,8 @@
                         <div class="header">
                             <h2>
                                 FOTO RUMAH
-                                <small>Pure css animations - <a href="https://daneden.github.io/animate.css/"
-                                        target="_blank">daneden.github.io/animate.css</a></small>
+                                {{-- <small>Pure css animations - <a href="https://daneden.github.io/animate.css/"
+                                        target="_blank">daneden.github.io/animate.css</a></small> --}}
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -67,137 +67,138 @@
                             <div class="demo-masked-input">
                                 <div class="row clearfix">
                                     <div class="col-md-3">
-                                        <b>Date</b>
+                                        <b>Kode Rumah</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
+                                                <i class="material-icons">home</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control date"
+                                            <div>
+                                                <input type="text" disabled value="11223344111" class="form-control date"
                                                     placeholder="Ex: 30/07/2016">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Time (24 hour)</b>
+                                        <b>Type Rumah</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">access_time</i>
+                                                <i class="material-icons">home</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control time24" placeholder="Ex: 23:59">
+                                            <div>
+                                                <input type="text" disabled class="form-control" value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Time (12 hour)</b>
+                                        <b>ID PLN</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">access_time</i>
+                                                <i class="material-icons">electric_bolt</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control time12"
-                                                    placeholder="Ex: 11:59 pm">
+                                            <div>
+                                                <input type="text" disabled class="form-control time12"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Date Time</b>
+                                        <b>ID PDAM</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
+                                                <i class="material-icons">water_drop</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control datetime"
-                                                    placeholder="Ex: 30/07/2016 23:59">
+                                            <div>
+                                                <input type="text" disabled class="form-control datetime"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Mobile Phone Number</b>
+                                        <b>Alamat</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">phone_iphone</i>
+                                                <i class="material-icons">add_location
+                                                </i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control mobile-phone-number"
-                                                    placeholder="Ex: +00 (000) 000-00-00">
+                                            <div>
+                                                <input type="text" disabled class="form-control mobile-phone-number"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Phone Number</b>
+                                        <b>Latitude</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">phone</i>
+                                                <i class="material-icons">gps_fixed</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control mobile-phone-number"
-                                                    placeholder="Ex: +00 (000) 000-00-00">
+                                            <div>
+                                                <input type="text" disabled class="form-control mobile-phone-number"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Money (Dollar)</b>
+                                        <b>Longtitude</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">attach_money</i>
+                                                <i class="material-icons">gps_fixed</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control money-dollar"
-                                                    placeholder="Ex: 99,99 $">
+                                            <div>
+                                                <input type="text" disabled class="form-control money-dollar"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Money (Euro)</b>
+                                        <b>Status Rumah</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">euro_symbol</i>
+                                                <i class="material-icons">night_shelter</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control money-euro"
-                                                    placeholder="Ex: 99,99 €">
+                                            <div>
+                                                <input type="text" disabled class="form-control email"
+                                                    value="Sudah Berpenghuni">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>IP Address</b>
+                                        <b>NIK Penghuni</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">computer</i>
+                                                <i class="material-icons">people</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control ip"
-                                                    placeholder="Ex: 255.255.255.255">
+                                            <div>
+                                                <input type="text" disabled class="form-control money-euro"
+                                                    value="11223344111">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Credit Card</b>
+                                        <b>Nama Penghuni</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">credit_card</i>
+                                                <i class="material-icons">people</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control credit-card"
-                                                    placeholder="Ex: 0000 0000 0000 0000">
+                                            <div>
+                                                <input type="text" disabled class="form-control ip"
+                                                    value="FAJRIANSYAH">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Email Address</b>
+                                        <b>Jatuh Tempo</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">email</i>
+                                                <i class="material-icons">calendar_month</i>
                                             </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control email"
-                                                    placeholder="Ex: example@example.com">
+                                            <div>
+                                                <input type="text" disabled class="form-control credit-card"
+                                               value="30/07/2016">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    {{-- <div class="col-md-3">
                                         <b>Serial Key</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
@@ -208,7 +209,7 @@
                                                     placeholder="Ex: XXX0-XXXX-XX00-0XXX">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -218,29 +219,28 @@
             <!-- #END# Masked Input -->
         </div>
     </section>
-
 @endsection
 
 @push('javascript')
-     <!-- Jquery Core Js -->
-     <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
 
-     <!-- Bootstrap Core Js -->
-     <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
- 
-     <!-- Select Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
- 
-     <!-- Slimscroll Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
- 
-     <!-- Waves Effect Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
- 
-     <!-- Custom Js -->
-     <script src="{{ asset('template') }}/js/admin.js"></script>
-     <script src="{{ asset('template') }}/js/pages/ui/animations.js"></script>
- 
-     <!-- Demo Js -->
-     <script src="{{ asset('template') }}/js/demo.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ asset('template') }}/js/admin.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/animations.js"></script>
+
+    <!-- Demo Js -->
+    <script src="{{ asset('template') }}/js/demo.js"></script>
 @endpush
