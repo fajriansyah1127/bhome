@@ -23,8 +23,8 @@
     <!-- Animation Css -->
     <link href="{{ asset('template') }}/plugins/animate-css/animate.css" rel="stylesheet" />
 
-     <!-- Sweetalert Css -->
-     <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <!-- Sweetalert Css -->
+    <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
     <link href="{{ asset('template') }}/plugins/morrisjs/morris.css" rel="stylesheet" />
@@ -33,11 +33,15 @@
     <link href="{{ asset('template') }}/css/style.css" rel="stylesheet">
 
     <!-- JQuery DataTable Css -->
-    <link href="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
+        rel="stylesheet">
 
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('template/') }}/css/themes/all-themes.css" rel="stylesheet" />
+
+    @yield('css')
+
 </head>
 
 <body class="theme-red">
@@ -285,10 +289,8 @@
     </nav>
     <!-- #Top Bar -->
     @include('layout.sidebar')
-
-    
-        @yield('content')
-    
+    @yield('content')
+    @stack('javascript')
 
 </body>
 

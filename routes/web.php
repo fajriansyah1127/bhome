@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\Penghuni;
@@ -8,7 +9,7 @@ use App\Models\Datarumah;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\PenghuniController;
 use App\Http\Controllers\DataRumahController;
-
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +21,10 @@ use App\Http\Controllers\DataRumahController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
-
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
+Route::resource('/', DashboardController::class);
 Route::resource('/type_rumah', TypeController::class);
 Route::resource('/penghuni', PenghuniController::class);
 Route::resource('/data_rumah', DataRumahController::class);

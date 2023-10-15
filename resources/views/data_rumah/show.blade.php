@@ -219,25 +219,28 @@
         </div>
     </section>
 
-    <!-- Jquery Core Js -->
-    <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
-
-    <!-- Custom Js -->
-    <script src="{{ asset('template') }}/js/admin.js"></script>
-    <script src="{{ asset('template') }}/js/pages/ui/animations.js"></script>
-
-    <!-- Demo Js -->
-    <script src="{{ asset('template') }}/js/demo.js"></script>
 @endsection
+
+@push('javascript')
+     <!-- Jquery Core Js -->
+     <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
+
+     <!-- Bootstrap Core Js -->
+     <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
+ 
+     <!-- Select Plugin Js -->
+     <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+ 
+     <!-- Slimscroll Plugin Js -->
+     <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+ 
+     <!-- Waves Effect Plugin Js -->
+     <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
+ 
+     <!-- Custom Js -->
+     <script src="{{ asset('template') }}/js/admin.js"></script>
+     <script src="{{ asset('template') }}/js/pages/ui/animations.js"></script>
+ 
+     <!-- Demo Js -->
+     <script src="{{ asset('template') }}/js/demo.js"></script>
+@endpush
