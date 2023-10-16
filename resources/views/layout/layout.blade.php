@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <title>Welcome To | Bhome</title>
     <!-- Favicon-->
     <link rel="icon" href="https://mybirawa.gsd.co.id/favicon.ico" type="image/x-icon">
 

@@ -17,6 +17,159 @@
                     <div class="card">
                         <div class="header">
                             <h2>
+                              DATA PERMOHONAN PENGAJUAN HUNI RUMAH
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                    <thead>
+                                        <tr>
+                                            <th>NIK</th>
+                                            <th>Nama Penghuni</th>
+                                            <th>Jumlah Penghuni</th>
+                                            <th>NO HP</th>
+                                            <th>Type Rumah</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>61</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <td>61</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ashton Cox</td>
+                                            <td>Junior Technical Author</td>
+                                            <td>San Francisco</td>
+                                            <td>66</td>
+                                            <td>61</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cedric Kelly</td>
+                                            <td>Senior Javascript Developer</td>
+                                            <td>Edinburgh</td>
+                                            <td>22</td>
+                                            <td>61</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Exportable Table -->
+            <!-- Exportable Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
                                 PENGHUNI RUMAH
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -45,15 +198,6 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nomor Type</th>
-                                            <th>Ukuran</th>
-                                            <th>Spesifikasi</th>
-                                            <th>Harga</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
                                             <td>Tiger Nixon</td>
@@ -169,65 +313,6 @@
             </div>
             <!-- #END# Exportable Table -->
 
-            <!-- Advanced Validation -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>TAMBAH TYPE RUMAH</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <form id="form_advanced_validation" action="{{ route('type_rumah.store') }}" method="POST">
-                                @csrf
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="nama"required>
-                                        <label class="form-label">Nama Type</label>
-                                    </div>
-                                    <div class="help-info">Contoh : Type 11181027</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="ukuran" required>
-                                        <label class="form-label">Ukuran</label>
-                                    </div>
-                                    <div class="help-info">Contoh : 10 x 10</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="spesifikasi" required>
-                                        <label class="form-label">Spesifikasi</label>
-                                    </div>
-                                    <div class="help-info">Contoh : 3 Kamar Tidur, 2 Kamar Mandi dst</div>
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="number" class="form-control" min="100000" name="harga"
-                                            required>
-                                        <label class="form-label">Harga</label>
-                                    </div>
-                                    <div class="help-info">Contoh : 1000000</div>
-                                </div>
-                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Advanced Validation -->
 
             <!-- For Material Design Colors -->
             <!-- Default Size -->

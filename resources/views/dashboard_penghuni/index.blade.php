@@ -20,7 +20,7 @@
             </div>
 
             <!-- Widgets -->
-            <div class="row clearfix">
+            {{-- <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="info-box bg-yellow hover-expand-effect hover-zoom-effect">
                         <div class="icon">
@@ -58,20 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="info-box bg-yellow hover-expand-effect hover-zoom-effect">
-                        <div class="icon">
-                            <a href="{{ route('data_rumah.index') }}">
-                                <i class="material-icons">home</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">JUMLAH RUMAH</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15"
-                                data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
             <!-- #END# Widgets -->
 
 
@@ -122,75 +109,35 @@
             <!-- #END# Basic Example -->
 
 
-            <!-- Basic Example -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                PETA PERUMAHAN
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="map" class="gmap"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Basic Example -->
+
             <!-- Widgets -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="info-box bg-yellow hover-expand-effect hover-zoom-effect">
+            {{-- <div class="row clearfix">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="info-box bg-green hover-expand-effect hover-zoom-effect">
                         <div class="icon">
-                            <a href="{{ route('data_rumah.index') }}">
-                                <i class="material-icons">home</i>
+                            <i class="material-icons">home</i>
                         </div>
                         <div class="content">
-                            <div class="text">JUMLAH RUMAH</div>
+                            <div class="text">RUMAH TERISI</div>
                             <div class="number count-to" data-from="0" data-to="125" data-speed="15"
                                 data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="info-box bg-green hover-expand-effect hover-zoom-effect">
-                        <div class="icon">
-                            <i class="material-icons">paid</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">JUMLAH TERBAYAR</div>
-                            <div class="number count-to" data-from="0" data-to="1128637500" data-speed="1000"
-                                data-fresh-interval="20">Rp.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="info-box bg-red hover-expand-effect hover-zoom-effect">
                         <div class="icon">
-                            <i class="material-icons">groups</i>
+                            <i class="material-icons">home</i>
                         </div>
                         <div class="content">
-                            <div class="text">JUMLAH PENGHUNI</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000"
+                            <div class="text">RUMAH KOSONG</div>
+                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000"
                                 data-fresh-interval="20"></div>
                         </div>
                     </div>
-                </div> --}}
-            </div>
+                </div>
+
+            </div> --}}
             <!-- #END# Widgets -->
 
 
@@ -523,38 +470,35 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <script>
-        const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
-
-        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 17,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        var greenIcon = L.icon({
-            iconUrl: '{{ asset('admin/img/icon_hijau.png') }}',
-            iconSize: [44, 44],
-            iconAnchor: [33, 66],
-            tooltipAnchor: [33, -30],
-            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-        });
-
-       // Marker pertama
-       var marker1 = L.marker([-1.251590837460213, 116.86339606535283], {
-            icon: greenIcon
-        })
-        .bindPopup('Marker Pertama')
-        .addTo(map);
-        marker1.url = '/data_rumah'; // Sesuaikan dengan URL yang benar
-        marker1.on('click', function() {
-            window.location = this.url;
-        });
-
-        // Marker kedua
-        var marker2 = L.marker([-1.2517088264977783, 116.86359996882781], {
+        <script>
+            const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
+        
+            const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 17,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+        
+            var greenIcon = L.icon({
+                iconUrl: '{{ asset('admin/img/icon_hijau.png') }}',
+                iconSize: [66, 66],
+                iconAnchor: [33, 66],
+                tooltipAnchor: [33, -30],
+                popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+        
+            // Marker pertama
+            var marker1 = L.marker([-1.251590837460213, 116.86339606535283], {
+                icon: greenIcon,
+            })
+            .bindTooltip(`Marker Pertama`)
+            .addTo(map);
+        
+            // Marker kedua
+            var marker2 = L.marker([-1.2517088264977783, 116.86359996882781], {
                 icon: greenIcon,
             })
             .bindTooltip(`Marker Kedua`)
             .addTo(map);
-    </script>
+        </script>
+        
 @endpush
