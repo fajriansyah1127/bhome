@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\Datarumah;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +13,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $lokasiData = Datarumah::get();
+        // $lokasi = Datarumah::get('pdam');
+        // dd($lokasiData); // Ini akan mencetak data ke konsol
+        return view('dashboard.index',compact('lokasiData'));
     }
 
     /**

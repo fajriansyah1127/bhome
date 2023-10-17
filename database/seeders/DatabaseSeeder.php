@@ -69,5 +69,8 @@ class DatabaseSeeder extends Seeder
             'role' => 'Guest',
             'perusahaan' => 'Perusahaan 4'
         ]);
+
+        
+
     }
 }

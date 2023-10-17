@@ -34,59 +34,41 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="/">
+                        <a href="/dashboard">
                             <i class="material-icons">dashboard</i>
                             <span>Dashbooard</span>
                         </a>
                     </li>
                     <li>
-                        <a class="menu-toggle">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">home</i>
-                            <span>Master Data </span>
+                            <span>Rumah</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Rumah</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="{{ route('data_rumah.index') }}">Data Rumah</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('type_rumah.index') }}">Type Rumah</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('penghuni.index') }}">Penghuni</a>
-                                    </li>
-                                </ul>
+                                <a href="{{ route('data_rumah.index') }}">Data Rumah</a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>Keuangan</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
-                                            Keuangan</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-2.html">Data
-                                            Pembayaran</a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-3.html">Infobox-3</a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-4.html">Infobox-4</a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-5.html">Infobox-5</a>
-                                    </li>
-                                </ul>
+                                <a href="{{ route('type_rumah.index') }}">Type Rumah</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('penghuni.index') }}">Penghuni</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">money</i>
+                            <span>Keuangan</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
+                                    Keuangan</a>
+                            </li>
+                            <li>
+                                <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-2.html">Data
+                                    Pembayaran</a>
                             </li>
                         </ul>
                     </li>

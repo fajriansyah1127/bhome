@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nama_type',
+        'spesifikasi',
+        'ukuran',
+        'harga',
+    ];
+
+    protected $guarded = ['id'];
 }

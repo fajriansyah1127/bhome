@@ -169,7 +169,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <script>
+    {{-- <script>
         const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
 
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -202,5 +202,59 @@
             })
             .bindTooltip(`Marker Kedua`)
             .addTo(map);
+    </script> --}}
+
+    <script>
+        const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
+
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 17,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var greenIcon = L.icon({
+            iconUrl: '{{ asset('admin/img/icon_hijau.png') }}',
+            iconSize: [44, 44],
+            iconAnchor: [33, 66],
+            tooltipAnchor: [33, -30],
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        var redIcon = L.icon({
+            iconUrl: '{{ asset('admin/img/icon_merah.png') }}',
+            iconSize: [44, 44],
+            iconAnchor: [33, 66],
+            tooltipAnchor: [33, -30],
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        @foreach ($lokasiData as $lokasi)
+            var marker = L.marker([{{ $lokasi->latitude }}, {{ $lokasi->longtitude }}], {
+                    icon: greenIcon
+                })
+                .bindPopup('{{ $lokasi->alamat }}') // Gantilah dengan atribut yang sesuai
+                .addTo(map);
+        @endforeach
+
+   
+
+        // Daftar koordinat
+        // var coordinates = [
+        //     @foreach ($lokasiData as $lokasi)
+        //     [{{ $lokasi->latitude }}, {{ $lokasi->longtitude }}],
+        //     @endforeach
+
+        //     // ... tambahkan koordinat lainnya sesuai kebutuhan
+        // ];
+
+        // // Membuat marker untuk setiap koordinat
+        // coordinates.forEach(coordinate => {
+        //     var marker = L.marker(coordinate, {
+        //             icon: redIcon
+        //         })
+        //         .addTo(map)
+        //         .bindPopup('{{ $lokasi->alamat }}') // Gantilah dengan atribut yang sesuai
+        //         .addTo(map);
+        // });
     </script>
 @endpush
