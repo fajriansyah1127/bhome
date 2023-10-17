@@ -1,203 +1,134 @@
-<section>
-    <!-- Left Sidebar -->
-    <aside id="leftsidebar" class="sidebar">
-        <!-- User Info -->
-        <div class="user-info">
-            <div class="image">
-                <img src="https://mybirawa.gsd.co.id/uploads/tenant/1690905078.png" width="100" height="48"
-                    alt="User" />
-            </div>
-            <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe
+@if (auth()->user()->role == 'Admin')
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="https://mybirawa.gsd.co.id/uploads/tenant/1690905078.png" width="100" height="48"
+                        alt="User" />
                 </div>
-                <div class="email">john.doe@example.com</div>
-                <div class="btn-group user-helper-dropdown">
-                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">keyboard_arrow_down</i>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a>
-                        </li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
-                    </ul>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe
+                    </div>
+                    <div class="email">john.doe@example.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a>
+                            </li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout" id="logout-link"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- #User Info -->
-        <!-- Menu ADMIN -->
-        <div class="menu">
-            <ul class="list">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="/">
-                        <i class="material-icons">dashboard</i>
-                        <span>Dashbooard</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-toggle">
-                        <i class="material-icons">home</i>
-                        <span>Master Data </span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Rumah</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="{{ route('data_rumah.index') }}">Data Rumah</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('type_rumah.index') }}">Type Rumah</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('penghuni.index') }}">Penghuni</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Keuangan</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
-                                        Keuangan</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-2.html">Data
-                                        Pembayaran</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-3.html">Infobox-3</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-4.html">Infobox-4</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-5.html">Infobox-5</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="pages/typography.html">
-                        <i class="material-icons">person</i>
-                        <span>User</span>
-                    </a>
-                </li>
+            <!-- #User Info -->
+            <!-- Menu ADMIN -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="/">
+                            <i class="material-icons">dashboard</i>
+                            <span>Dashbooard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-toggle">
+                            <i class="material-icons">home</i>
+                            <span>Master Data </span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Rumah</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="{{ route('data_rumah.index') }}">Data Rumah</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('type_rumah.index') }}">Type Rumah</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('penghuni.index') }}">Penghuni</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <span>Keuangan</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
+                                            Keuangan</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-2.html">Data
+                                            Pembayaran</a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-3.html">Infobox-3</a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-4.html">Infobox-4</a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="{{ asset('template') }}/pages/widgets/infobox/infobox-5.html">Infobox-5</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="pages/typography.html">
+                            <i class="material-icons">person</i>
+                            <span>User</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{{ route('pengajuan.index') }}">
-                        <i class="material-icons">assignment</i>
-                        <span>Pengajuan</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{{ route('pengajuan.index') }}">
+                            <i class="material-icons">assignment</i>
+                            <span>Pengajuan</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="pages/changelogs.html">
-                        <i class="material-icons">update</i>
-                        <span>Changelogs</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="pages/changelogs.html">
+                            <i class="material-icons">update</i>
+                            <span>Changelogs</span>
+                        </a>
+                    </li>
 
-            </ul>
-            <ul class="list">
-                <li class="header">MAIN NAVIGATION CUSTOMER</li>
-                <li class="active">
-                    <a href="/">
-                        <i class="material-icons">dashboard</i>
-                        <span>Dashbooard</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-toggle">
-                        <i class="material-icons">home</i>
-                        <span>Master Data </span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Rumah</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="{{ route('data_rumah.index') }}">Data Rumah</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('type_rumah.index') }}">Type Rumah</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('penghuni.index') }}">Penghuni</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Keuangan</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
-                                        Keuangan</a>
-                                </li>
-                                <li>
-                                    <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-2.html">Data
-                                        Pembayaran</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="{{ asset('template') }}/pages/widgets/infobox/infobox-3.html">Infobox-3</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="{{ asset('template') }}/pages/widgets/infobox/infobox-4.html">Infobox-4</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="{{ asset('template') }}/pages/widgets/infobox/infobox-5.html">Infobox-5</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="pages/typography.html">
-                        <i class="material-icons">person</i>
-                        <span>User</span>
-                    </a>
-                </li>
-              
-                <li>
-                    <a href="pages/changelogs.html">
-                        <i class="material-icons">update</i>
-                        <span>Changelogs</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- #Menu ADMIN-->
-
-        <!-- Footer -->
-        <div class="legal">
-            <div class="copyright">
-                &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </ul>
             </div>
-            <div class="version">
-                <b>Version: </b> 1.0.5
+            <!-- #Menu ADMIN-->
+
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
             </div>
-        </div>
-        <!-- #Footer -->
-    </aside>
-    <!-- #END# Left Sidebar -->
-    <!-- Right Sidebar -->
-    {{-- <aside id="rightsidebar" class="right-sidebar">
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        {{-- <aside id="rightsidebar" class="right-sidebar">
         <ul class="nav nav-tabs tab-nav-right" role="tablist">
             <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
             <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
@@ -338,5 +269,91 @@
             </div>
         </div>
     </aside> --}}
-    <!-- #END# Right Sidebar -->
-</section>
+        <!-- #END# Right Sidebar -->
+    </section>
+@elseif (auth()->user()->role == 'Guest')
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="https://mybirawa.gsd.co.id/uploads/tenant/1690905078.png" width="100" height="48"
+                        alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe
+                    </div>
+                    <div class="email">john.doe@example.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a>
+                            </li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout" id="logout-link"><i class="material-icons">input</i>Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu ADMIN -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="/">
+                            <i class="material-icons">dashboard</i>
+                            <span>Dashbooard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('data_rumah.index') }}">
+                            <i class="material-icons">home</i>
+                            <span>Data Rumah Tersedia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/typography.html">
+                            <i class="material-icons">person</i>
+                            <span>User</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('pengajuan.index') }}">
+                            <i class="material-icons">assignment</i>
+                            <span>Pengajuan</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/changelogs.html">
+                            <i class="material-icons">update</i>
+                            <span>Changelogs</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- #Menu ADMIN-->
+
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+    </section>
+@endif

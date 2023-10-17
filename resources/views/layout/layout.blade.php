@@ -92,7 +92,7 @@
                                 class="material-icons">search</i></a></li> --}}
                     <!-- #END# Call Search -->
                     <!-- SIGN OUT -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i
+                    <li><a href="{{ route('logout')}}" id="logout-link" data-close="true"><i
                                 class="material-icons">input</i></a></li>
                     <!-- #END#  SIGN OUT -->
                     <!-- Notifications -->
@@ -291,6 +291,34 @@
     @include('layout.sidebar')
     @yield('content')
     @stack('javascript')
+
+    <script>
+        document.getElementById('logout-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah tautan mengarahkan ke URL
+
+            // Kirim permintaan POST ke rute logout dengan menggunakan JavaScript
+            fetch('{{ route('logout') }}', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}', // Sertakan token CSRF
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({}) // Tidak ada data yang perlu dikirim dalam permintaan POST
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        // Logout berhasil
+                        window.location.href = '{{ route('login') }}'; // Ganti dengan halaman yang sesuai
+                    } else {
+                        // Logout gagal atau ada kesalahan lainnya
+                        console.error('Logout failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('An error occurred:', error);
+                });
+        });
+    </script>
 
 </body>
 

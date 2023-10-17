@@ -1,5 +1,7 @@
 @extends('layout.layout')
 @section('content')
+
+
     <section class="content">
         <div class="container-fluid js-sweetalert">
             {{-- <div class="block-header">
@@ -11,6 +13,7 @@
             <!-- Basic Examples -->
 
             <!-- #END# Basic Examples -->
+            @if (auth()->user()->role == 'Admin')
             <!-- Exportable Table -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -114,7 +117,7 @@
                 </div>
             </div>
             <!-- #END# Exportable Table -->
-
+          
             <!-- Exportable Table -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -286,117 +289,6 @@
             </div>
             <!-- #END# Exportable Table -->
 
-            <!-- Exportable Table -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                DATA RUMAH (TAMPILAN INI KHUSUS CALON PENGHUNI)
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover  js-basic-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Alamat</th>
-                                            <th>Kode Rumah/Type</th>
-                                            <th>Spesifikasi</th>
-                                            <th>Harga</th>
-                                            <th>Foto</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>
-                                                <div class="body">
-                                                    <img src="http://127.0.0.1:8000/template/images/animation-bg.jpg"
-                                                    class="js-animating-object img-responsive">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('data_rumah.show', 1) }}', '_blank')">Detail</button>
-                                                        </li>
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>61</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Exportable Table -->
-
             <!-- Masked Input -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -538,6 +430,117 @@
                     </div>
                 </div>
             </div>
+            @elseif (auth()->user()->role == 'Guest')
+
+            <!-- Exportable Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                DATA RUMAH BELUM BERPENGHUNI
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover  js-basic-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Alamat</th>
+                                            <th>Kode Rumah/Type</th>
+                                            <th>Spesifikasi</th>
+                                            <th>Harga</th>
+                                            <th>Foto</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>
+                                                    <img src="http://127.0.0.1:8000/template/images/animation-bg.jpg"
+                                                    class="img-responsive">
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('data_rumah.show', 1) }}', '_blank')">Detail</button>
+                                                        </li>
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>61</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ACTION <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li> <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button"
+                                                                class="btn btn-default waves-effect m-r-20"
+                                                                data-toggle="modal"
+                                                                data-target="#destroytyperumah">Delete</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Exportable Table -->
+            @endif
         </div>
     </section>
 @endsection
