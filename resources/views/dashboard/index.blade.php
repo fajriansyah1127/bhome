@@ -1,8 +1,7 @@
 @extends('layout.layout')
 @section('css')
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin="" />
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
     {{-- <style>
         #map {
@@ -28,7 +27,7 @@
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH RUMAH</div>
-                                <div class="number count-to" data-from="0" data-to="125" data-speed="15"
+                                <div class="number count-to" data-from="0" data-to="157" data-speed="15000"
                                     data-fresh-interval="20"></div>
                             </div>
                         </div>
@@ -70,7 +69,7 @@
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH RUMAH</div>
-                                <div class="number count-to" data-from="0" data-to="125" data-speed="15"
+                                <div class="number count-to" data-from="0" data-to="157" data-speed="15"
                                     data-fresh-interval="20"></div>
                             </div>
                         </div>
@@ -208,7 +207,7 @@
         const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
 
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 17,
+            maxZoom: 30,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
@@ -236,7 +235,7 @@
                 .addTo(map);
         @endforeach
 
-   
+
 
         // Daftar koordinat
         // var coordinates = [
