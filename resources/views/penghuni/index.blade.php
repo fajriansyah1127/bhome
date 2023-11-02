@@ -17,7 +17,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                              DATA PERMOHONAN PENGAJUAN HUNI RUMAH
+                                BUKTI BAYAR
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -40,122 +40,76 @@
                                         <tr>
                                             <th>NIK</th>
                                             <th>Nama Penghuni</th>
-                                            <th>Jumlah Penghuni</th>
+                                            <th>Perusahaan</th>
                                             <th>NO HP</th>
                                             <th>Type Rumah</th>
-                                            <th>Action</th>
+                                            <th>Harga Sewa</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>61</td>
+                                            <td>22010006</td>
+                                            <td>AMIRUDIN AHMAD</td>
+                                            <td>TELKOM PROPERTY</td>
+                                            <td>08111555590</td>
+                                            <td>t150</td>
+                                            <td>19762500</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
+                                                    <button type="button" class="btn btn-success ">
+                                                        LUNAS
                                                     </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>61</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>61</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>61</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
 
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>22010074</td>
+                                            <td>LENA SABRINA</td>
+                                            <td>TELKOM INDONESIA</td>
+                                            <td>08112814620</td>
+                                            <td>t90</td>
+                                            <td>7387500</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-success ">
+                                                        LUNAS
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>22010004</td>
+                                            <td>PUTRI APRILLIANI</td>
+                                            <td>TELKOM PROPERTY</td>
+                                            <td>08115822511</td>
+                                            <td>t90</td>
+                                            <td>7387500</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-success ">
+                                                        LUNAS 
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>22010127</td>
+                                            <td>MUJI RAHMAD</td>
+                                            <td>TELKOM PROPERTY</td>
+                                            <td>081258724212</td>
+                                            <td>t120</td>
+                                            <td>13575000</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-danger ">
+                                                        BELUM LUNAS
+                                                    </button>
+
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -165,7 +119,7 @@
             </div>
             <!-- #END# Exportable Table -->
             <!-- Exportable Table -->
-            <div class="row clearfix">
+            {{-- <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
@@ -310,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- #END# Exportable Table -->
 
 
@@ -334,49 +288,47 @@
             </div>
         </div>
     </section>
-
-
 @endsection
 
 @push('javascript')
-       <!-- Jquery Core Js -->
-       <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
 
-       <!-- Bootstrap Core Js -->
-       <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
-   
-       <!-- Bootstrap Notify Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/bootstrap-notify/bootstrap-notify.js"></script>
-   
-       <!-- Select Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-   
-       <!-- Slimscroll Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-   
-       <!-- SweetAlert Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/sweetalert/sweetalert.min.js"></script>
-   
-       <!-- Waves Effect Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
-   
-       <!-- Jquery DataTable Plugin Js -->
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/jquery.dataTables.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-       <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-   
-       <!-- Custom Js -->
-       <script src="{{ asset('template') }}/js/admin.js"></script>
-       <script src="{{ asset('template') }}/js/pages/tables/jquery-datatable.js"></script>
-       <script src="{{ asset('template') }}/js/pages/ui/dialogs.js"></script>
-       <script src="{{ asset('template') }}/js/pages/ui/modals.js"></script>
-   
-       <!-- Demo Js -->
-       <script src="{{ asset('template') }}/js/demo.js"></script> 
+    <!-- Bootstrap Core Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ asset('template') }}/js/admin.js"></script>
+    <script src="{{ asset('template') }}/js/pages/tables/jquery-datatable.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/dialogs.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/modals.js"></script>
+
+    <!-- Demo Js -->
+    <script src="{{ asset('template') }}/js/demo.js"></script>
 @endpush

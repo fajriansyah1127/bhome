@@ -2,17 +2,17 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
+            {{-- <div class="block-header">
                 <h2>FORMULIR PENGAJUAN RUMAH</h2>
-            </div>
-            <div class="row clearfix">
+            </div> --}}
+            {{-- <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
                                 FOTO RUMAH YANG DIAJUKAN
-                                {{-- <small>Pure css animations - <a href="https://daneden.github.io/animate.css/"
-                                        target="_blank">daneden.github.io/animate.css</a></small> --}}
+                                <small>Pure css animations - <a href="https://daneden.github.io/animate.css/"
+                                        target="_blank">daneden.github.io/animate.css</a></small>
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -29,16 +29,16 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <img src="{{ asset('template') }}/images/animation-bg.jpg"
-                                class="js-animating-object img-responsive">
+                            <img src="{{ asset('template') }}/images/t120-bg.jpg"
+                              width="150" height="200"  class="js-animating-object img-responsive">
                             <div class="demo-image-copyright">
-                                This image taken from <a href="https://unsplash.com" target="_blank">Unsplash</a>
+                                This image taken from <a href="{{ asset('template') }}/images/t120.jpg" target="_blank">Unsplash</a>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Masked Input -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect">AJUKAN</button>
+                                        <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect">SETUJUI</button>
                                     </div>
                                     {{-- <div class="col-md-3">
                                         <b>Serial Key</b>

@@ -70,6 +70,16 @@ class DatabaseSeeder extends Seeder
             'perusahaan' => 'Perusahaan 4'
         ]);
 
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('password'),
+            'nik' => '66666',
+            'kontak' => '123124',
+            'alamat' => 'Adwadsa 4',
+            'role' => 'Admin',
+            'perusahaan' => 'Perusahaan 4'
+        ]);
         
 
     }

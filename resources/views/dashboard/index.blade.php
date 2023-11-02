@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-    {{-- <style>
+    <style>
         #map {
             height: 100px;
         }
-    </style> --}}
+    </style>
 @endsection
 
 @section('content')
@@ -87,7 +87,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                PETA PERUMAHAN
+                                PETA PERUMAHAN dddd
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -104,7 +104,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div id="map" class="gmap"></div>
+                            <div id="gmap_markers" class="gmap"></div>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
     </script> --}}
 
     <script>
-        const map = L.map('map').setView([-1.2505993484222855, 116.86403959602268], 19);
+        const map = L.map('gmap_markers').setView([-1.2505993484222855, 116.86403959602268], 17);
 
         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 30,
@@ -227,15 +227,33 @@
             popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
         });
 
+        var blueIcon = L.icon({
+            iconUrl: '{{ asset('admin/img/icon_biru.png') }}',
+            iconSize: [44, 44],
+            iconAnchor: [33, 66],
+            tooltipAnchor: [33, -30],
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
         @foreach ($lokasiData as $lokasi)
             var marker = L.marker([{{ $lokasi->latitude }}, {{ $lokasi->longtitude }}], {
-                    icon: greenIcon
+                    icon: blueIcon
                 })
                 .bindPopup('{{ $lokasi->alamat }}') // Gantilah dengan atribut yang sesuai
                 .addTo(map);
         @endforeach
 
 
+        var marker = L.marker([-1.2498712782387758, 116.86517467085957], {
+                icon: blueIcon
+            })
+            .bindPopup('inialamat palsu') // Gantilah dengan atribut yang sesuai
+            .addTo(map);
+        var marker = L.marker([ -1.2487060995242851, 116.86364665881506], {
+                icon: blueIcon
+            })
+            .bindPopup('inialamat palsu') // Gantilah dengan atribut yang sesuai
+            .addTo(map);
 
         // Daftar koordinat
         // var coordinates = [
