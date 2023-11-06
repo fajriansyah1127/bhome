@@ -27,7 +27,7 @@
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH RUMAH</div>
-                                <div class="number count-to" data-from="0" data-to="157" data-speed="15000"
+                                <div class="number count-to" data-from="0" data-to="157" data-speed="1500"
                                     data-fresh-interval="20"></div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH TERBAYAR</div>
-                                <div class="number count-to" data-from="0" data-to="1128637500" data-speed="1000"
+                                <div class="number count-to" data-from="0" data-to="1128637500" data-speed="1500"
                                     data-fresh-interval="20">Rp.</div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="content">
                                 <div class="text">JUMLAH PENGHUNI</div>
-                                <div class="number count-to" data-from="0" data-to="243" data-speed="1000"
+                                <div class="number count-to" data-from="0" data-to="243" data-speed="1500"
                                     data-fresh-interval="20"></div>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
             })
             .bindPopup('inialamat palsu') // Gantilah dengan atribut yang sesuai
             .addTo(map);
-        var marker = L.marker([ -1.2487060995242851, 116.86364665881506], {
+        var marker = L.marker([-1.2487060995242851, 116.86364665881506], {
                 icon: blueIcon
             })
             .bindPopup('inialamat palsu') // Gantilah dengan atribut yang sesuai

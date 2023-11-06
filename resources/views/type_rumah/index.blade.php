@@ -193,7 +193,7 @@
                                 @csrf
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama"required>
+                                        <input type="text" class="form-control" name="nama_type"required>
                                         <label class="form-label">Nama Type</label>
                                     </div>
                                     <div class="help-info">Contoh : Type 11181027</div>

@@ -9,6 +9,8 @@ class Type extends Model
 {
     use HasFactory;
 
+    protected $table = "type";
+
     protected $fillable = [
         'nama_type',
         'spesifikasi',
@@ -17,4 +19,9 @@ class Type extends Model
     ];
 
     protected $guarded = ['id'];
+
+    public function data_rumah()
+    {
+        return $this->hasMany(Datarumah::class);
+    }
 }

@@ -36,6 +36,9 @@
     <link href="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
         rel="stylesheet">
 
+    <!-- Sweetalert Css -->
+    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('template/') }}/css/themes/all-themes.css" rel="stylesheet" />
@@ -45,6 +48,7 @@
 </head>
 
 <body class="theme-red">
+
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -92,7 +96,7 @@
                                 class="material-icons">search</i></a></li> --}}
                     <!-- #END# Call Search -->
                     <!-- SIGN OUT -->
-                    <li><a href="{{ route('logout')}}" id="logout-link" data-close="true"><i
+                    <li><a href="{{ route('logout') }}" id="logout-link" data-close="true"><i
                                 class="material-icons">input</i></a></li>
                     <!-- #END#  SIGN OUT -->
                     <!-- Notifications -->
@@ -291,6 +295,9 @@
     @include('layout.sidebar')
     @yield('content')
     @stack('javascript')
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
 
     <script>
         document.getElementById('logout-link').addEventListener('click', function(event) {
