@@ -12,7 +12,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>UPDATE TYPE</h2>
+                            <h2>Update {{ $type_rumah->nama_type }}</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
@@ -28,32 +28,33 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <form id="form_advanced_validation" action="{{ route('type_rumah.store') }}" method="POST">
+                            <form id="form_advanced_validation" action="{{ route('type_rumah.update', $type_rumah->id) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="nama"required>
+                                        <input type="text" class="form-control" value="{{ $type_rumah->nama_type }}" name="nama_type"required>
                                         <label class="form-label">Nama Type</label>
                                     </div>
                                     <div class="help-info">Contoh : Type 11181027</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="ukuran" required>
+                                        <input type="text" class="form-control" value="{{ $type_rumah->ukuran }}" name="ukuran" required>
                                         <label class="form-label">Ukuran</label>
                                     </div>
                                     <div class="help-info">Contoh : 10 x 10</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="spesifikasi" required>
+                                        <input type="text" class="form-control" value="{{ $type_rumah->spesifikasi }}" name="spesifikasi" required>
                                         <label class="form-label">Spesifikasi</label>
                                     </div>
                                     <div class="help-info">Contoh : 3 Kamar Tidur, 2 Kamar Mandi dst</div>
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" min="100000" name="harga"
+                                        <input type="number" class="form-control" value="{{ $type_rumah->harga }}" min="100000" name="harga"
                                             required>
                                         <label class="form-label">Harga</label>
                                     </div>

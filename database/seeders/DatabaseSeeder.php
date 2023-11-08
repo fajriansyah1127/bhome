@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Type;
 
 class DatabaseSeeder extends Seeder
 {
@@ -80,7 +81,33 @@ class DatabaseSeeder extends Seeder
             'role' => 'Admin',
             'perusahaan' => 'Perusahaan 4'
         ]);
-        
 
+        Type::factory()->create([
+            'nama_type' => 'Type 200',
+            'spesifikasi' => '4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi',
+            'ukuran' => '10 x 20 Meter',
+            'harga' => '19762500'
+        ]);
+        
+        Type::factory()->create([
+            'nama_type' => 'Type 150',
+            'spesifikasi' => '4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi',
+            'ukuran' => '10 x 15 Meter',
+            'harga' => '19762500'
+        ]);
+
+        Type::factory()->create([
+            'nama_type' => 'Type 120',
+            'spesifikasi' => '3 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi',
+            'ukuran' => '10 x 12 Meter',
+            'harga' => '13575000'
+        ]);
+
+        Type::factory()->create([
+            'nama_type' => 'Type 90',
+            'spesifikasi' => '3 Kamar Tidur, 2 Kamar Mandi, 1 Dapur & Garasi',
+            'ukuran' => '10 x 9 Meter',
+            'harga' => '7800000'
+        ]);
     }
 }

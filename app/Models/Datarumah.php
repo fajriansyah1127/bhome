@@ -12,6 +12,7 @@ class Datarumah extends Model
     protected $fillable = [
         'user_id',
         'type_id',
+        'kode_rumah',
         'alamat',
         'pdam',
         'pln',

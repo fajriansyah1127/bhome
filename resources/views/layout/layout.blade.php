@@ -17,6 +17,12 @@
     <!-- Bootstrap Core Css -->
     <link href="{{ asset('template') }}/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
+    <!-- Multi Select Css -->
+    <link href="{{ asset('template') }}/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="{{ asset('template') }}/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
     <!-- Waves Effect Css -->
     <link href="{{ asset('template') }}/plugins/node-waves/waves.css" rel="stylesheet" />
 
@@ -48,7 +54,7 @@
 </head>
 
 <body class="theme-red">
-
+    @include('sweetalert::alert')
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">

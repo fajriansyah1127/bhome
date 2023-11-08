@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Datarumah;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class DataRumahController extends Controller
@@ -12,7 +13,9 @@ class DataRumahController extends Controller
      */
     public function index()
     {
-        return view('data_rumah.index');
+        $type_rumah = Type::get();
+        $data_rumah = Datarumah::get();
+        return view('data_rumah.index', compact('type_rumah','data_rumah'));
     }
 
     /**

@@ -256,22 +256,22 @@
             .addTo(map);
 
         // Daftar koordinat
-        // var coordinates = [
-        //     @foreach ($lokasiData as $lokasi)
-        //     [{{ $lokasi->latitude }}, {{ $lokasi->longtitude }}],
-        //     @endforeach
+        var coordinates = [
+            @foreach ($lokasiData as $lokasi)
+            [{{ $lokasi->latitude }}, {{ $lokasi->longtitude }}],
+            @endforeach
 
-        //     // ... tambahkan koordinat lainnya sesuai kebutuhan
-        // ];
+            // ... tambahkan koordinat lainnya sesuai kebutuhan
+        ];
 
-        // // Membuat marker untuk setiap koordinat
-        // coordinates.forEach(coordinate => {
-        //     var marker = L.marker(coordinate, {
-        //             icon: redIcon
-        //         })
-        //         .addTo(map)
-        //         .bindPopup('{{ $lokasi->alamat }}') // Gantilah dengan atribut yang sesuai
-        //         .addTo(map);
-        // });
+        // Membuat marker untuk setiap koordinat
+        coordinates.forEach(coordinate => {
+            var marker = L.marker(coordinate, {
+                    icon: redIcon
+                })
+                .addTo(map)
+                .bindPopup('{{ $lokasi->alamat }}') // Gantilah dengan atribut yang sesuai
+                .addTo(map);
+        });
     </script>
 @endpush

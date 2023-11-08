@@ -36,7 +36,8 @@
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover dataTable">
+                                    <table
+                                        class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>Kode Rumah</th>
@@ -177,7 +178,8 @@
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                    <table
+                                        class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>Kode Rumah</th>
@@ -244,21 +246,17 @@
                                                     <i class="material-icons">home</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" placeholder="11223344111"
-                                                        class="form-control date" placeholder="Ex: 30/07/2016">
+                                                    <input type="text" class="form-control date">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <b>Type Rumah</b>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                    <i class="material-icons">home</i>
-                                                </span>
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="11223344111">
-                                                </div>
-                                            </div>
+                                                <b>Basic</b>
+                                            <select class="form-control show-tick">
+                                                @foreach ($type_rumah as $data)
+                                                    <option value="{{ $data->id }}">{{ $data->nama_type }}
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="col-md-3">
                                             <b>ID PLN</b>
@@ -267,8 +265,7 @@
                                                     <i class="material-icons">electric_bolt</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control time12"
-                                                        placeholder="11223344111">
+                                                    <input type="text" class="form-control time12">
                                                 </div>
                                             </div>
                                         </div>
@@ -279,8 +276,7 @@
                                                     <i class="material-icons">water_drop</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control datetime"
-                                                        placeholder="11223344111">
+                                                    <input type="text" class="form-control datetime">
                                                 </div>
                                             </div>
                                         </div>
@@ -292,8 +288,7 @@
                                                     </i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control mobile-phone-number"
-                                                        placeholder="11223344111">
+                                                    <input type="text" class="form-control mobile-phone-number">
                                                 </div>
                                             </div>
                                         </div>
@@ -304,8 +299,7 @@
                                                     <i class="material-icons">gps_fixed</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control mobile-phone-number"
-                                                        placeholder="11223344111">
+                                                    <input type="text" class="form-control mobile-phone-number">
                                                 </div>
                                             </div>
                                         </div>
@@ -316,9 +310,18 @@
                                                     <i class="material-icons">gps_fixed</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control money-dollar"
-                                                        placeholder="11223344111">
+                                                    <input type="text" class="form-control money-dollar">
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <b>Foto Rumah</b>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">image</i>
+                                                </span>
+                                                <input type="file" class="form-control" name="foto"
+                                                    accept="image/png, image/gif, image/jpeg"required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

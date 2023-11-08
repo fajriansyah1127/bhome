@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('type_id');
+            $table->foreignId('kode_rumah');
             $table->string('alamat');
             $table->string('pdam');
             $table->string('pln');
@@ -26,11 +27,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Schema::table('dokumens', function (Blueprint $table) {
-        //     $table->foreign('type_id')->references('id')->on('type')->ondelete('restrict');
-        //     $table->foreign('user_id')->references('id')->on('users')->ondelete('restrict');
-        //     // $table->foreign('produk_id')->references('id')->on('asuransis')->ondelete('cascade');
-        // });
+        Schema::table('type', function (Blueprint $table) {
+            $table->foreign('type_id')->references('id')->on('type')->ondelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->ondelete('restrict');
+            // $table->foreign('produk_id')->references('id')->on('asuransis')->ondelete('cascade');
+        });
     }
 
     /**

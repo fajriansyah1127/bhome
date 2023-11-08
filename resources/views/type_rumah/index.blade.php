@@ -35,7 +35,7 @@
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>Nomor Type</th>
@@ -56,109 +56,34 @@
                                     </tfoot> --}}
                                     <tbody>
                                         <tr>
-                                            <td>Type 120</td>
-                                            <td>10 x 12 Meter</td>
-                                            <td>3 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
-                                            <td>13.575.000</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
+                                            @foreach ($type_rumah as $data)
+                                                <td>{{ $data->nama_type }}</td>
+                                                <td>{{ $data->ukuran }}</td>
+                                                <td>{{ $data->spesifikasi }}</td>
+                                                <td>{{ $data->harga }}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            ACTION <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li> <button type="button"
+                                                                    class="btn btn-default waves-effect m-r-20"
+                                                                    onclick="window.open('{{ route('type_rumah.edit', $data->id) }}', '_blank')">Edit</button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button"
+                                                                    class="btn btn-default waves-effect m-r-20"
+                                                                    data-toggle="modal"
+                                                                    data-target="#destroytyperumah{{ $data->id }}">Delete</button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
                                         </tr>
-                                        <tr>
-                                            <td>Type 150</td>
-                                            <td>10 x 15 Meter</td>
-                                            <td>4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
-                                            <td>19.762.500</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Type 200</td>
-                                            <td>10 x 20 Meter</td>
-                                            <td>4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi</td>
-                                            <td>19.762.500</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Type 90</td>
-                                            <td>10 x 9 Meter</td>
-                                            <td>3 Kamar Tidur, 2 Kamar Mandi, 1 Dapur & Garasi </td>
-                                            <td>7.387.500</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ACTION <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li> <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">Edit</button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button"
-                                                                class="btn btn-default waves-effect m-r-20"
-                                                                data-toggle="modal"
-                                                                data-target="#destroytyperumah">Delete</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -214,8 +139,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="number" class="form-control" min="100000" name="harga"
-                                            required>
+                                        <input type="number" class="form-control" min="100000" name="harga" required>
                                         <label class="form-label">Harga</label>
                                     </div>
                                     <div class="help-info">Contoh : 1000000</div>
@@ -229,67 +153,74 @@
             <!-- #END# Advanced Validation -->
 
             <!-- For Material Design Colors -->
-            <!-- Default Size -->
-            <div class="modal fade" id="destroytyperumah" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="defaultModalLabel">KONFIRMASI HAPUS TYPE RUMAH</h4>
-                        </div>
-                        <div class="modal-body">
-                            Apakah anda yakin ingin menghapus data ini ?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-link bg-red waves-effect">Delete</button>
-                            <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+            @foreach ($type_rumah as $data)
+                <!-- Default Size -->
+                <div class="modal fade" id="destroytyperumah{{ $data->id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="defaultModalLabel">KONFIRMASI HAPUS TYPE RUMAH</h4>
+                            </div>
+                            <div class="modal-body">
+                                Apakah anda yakin ingin menghapus {{ $data->nama_type }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form action="{{ route('type_rumah.destroy', $data->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-link bg-red waves-effect">Delete</button>
+                                    <button type="button" class="btn btn-link waves-effect"
+                                        data-dismiss="modal">CLOSE</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </section>
-
 @endsection
 
 @push('javascript')
-     <!-- Jquery Core Js -->
-     <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="{{ asset('template') }}/plugins/jquery/jquery.min.js"></script>
 
-     <!-- Bootstrap Core Js -->
-     <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
- 
-     <!-- Bootstrap Notify Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/bootstrap-notify/bootstrap-notify.js"></script>
- 
-     <!-- Select Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
- 
-     <!-- Slimscroll Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
- 
-     <!-- SweetAlert Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/sweetalert/sweetalert.min.js"></script>
- 
-     <!-- Waves Effect Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
- 
-     <!-- Jquery DataTable Plugin Js -->
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/jquery.dataTables.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-     <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
- 
-     <!-- Custom Js -->
-     <script src="{{ asset('template') }}/js/admin.js"></script>
-     <script src="{{ asset('template') }}/js/pages/tables/jquery-datatable.js"></script>
-     <script src="{{ asset('template') }}/js/pages/ui/dialogs.js"></script>
-     <script src="{{ asset('template') }}/js/pages/ui/modals.js"></script>
- 
-     <!-- Demo Js -->
-     <script src="{{ asset('template') }}/js/demo.js"></script>  
+    <!-- Bootstrap Core Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@12"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="{{ asset('template') }}/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ asset('template') }}/js/admin.js"></script>
+    <script src="{{ asset('template') }}/js/pages/tables/jquery-datatable.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/dialogs.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/modals.js"></script>
+
+    <!-- Demo Js -->
+    <script src="{{ asset('template') }}/js/demo.js"></script>
 @endpush
