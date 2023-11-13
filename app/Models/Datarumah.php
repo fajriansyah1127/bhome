@@ -24,4 +24,10 @@ class Datarumah extends Model
     ];
 
     protected $guarded = ['id'];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
 }

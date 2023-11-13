@@ -13,21 +13,21 @@ return new class extends Migration
     {
         Schema::create('rumah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreignId('type_id');
-            $table->foreignId('kode_rumah');
+            $table->string('kode_rumah');
             $table->string('alamat');
             $table->string('pdam');
             $table->string('pln');
             $table->string('latitude');
             $table->string('longtitude');
-            $table->date('jatuh_ tempo');
-            $table->string('foto');
-            $table->string('jumlah_penghuni');
+            $table->date('jatuh_tempo')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('jumlah_penghuni')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('type', function (Blueprint $table) {
+        Schema::table('rumah', function (Blueprint $table) {
             $table->foreign('type_id')->references('id')->on('type')->ondelete('restrict');
             $table->foreign('user_id')->references('id')->on('users')->ondelete('restrict');
             // $table->foreign('produk_id')->references('id')->on('asuransis')->ondelete('cascade');
