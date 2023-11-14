@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <img src="{{ asset('template') }}/images/animation-bg.jpg"
+                            <img src="{{ asset('foto') . '/' . $data_rumah->foto }}" 
                                 class="js-animating-object img-responsive">
                             <div class="demo-image-copyright">
                                 This image taken from <a href="https://unsplash.com" target="_blank">Unsplash</a>
@@ -73,7 +73,7 @@
                                                 <i class="material-icons">home</i>
                                             </span>
                                             <div>
-                                                <input type="text" disabled value="11223344111" class="form-control date"
+                                                <input type="text" disabled value="{{ $data_rumah->kode_rumah }}" class="form-control date"
                                                     placeholder="Ex: 30/07/2016">
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                                 <i class="material-icons">home</i>
                                             </span>
                                             <div>
-                                                <input type="text" disabled class="form-control" value="11223344111">
+                                                <input type="text" disabled class="form-control" value="{{ $data_rumah->type->nama_type }}">
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control time12"
-                                                    value="11223344111">
+                                                value="{{ $data_rumah->pln }}">
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control datetime"
-                                                    value="11223344111">
+                                                value="{{ $data_rumah->pdam }}">
                                             </div>
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control mobile-phone-number"
-                                                    value="11223344111">
+                                                value="{{ $data_rumah->alamat }}">
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control mobile-phone-number"
-                                                    value="11223344111">
+                                                value="{{ $data_rumah->latitude }}">
                                             </div>
                                         </div>
                                     </div>
@@ -146,19 +146,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control money-dollar"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Status Rumah</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">night_shelter</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control email"
-                                                    value="Sudah Berpenghuni">
+                                                value="{{ $data_rumah->longtitude }}">
                                             </div>
                                         </div>
                                     </div>
@@ -170,7 +158,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control money-euro"
-                                                    value="11223344111">
+                                                value="{{ $data_rumah->user->nik ?? 'nihil' }}">
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +170,7 @@
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control ip"
-                                                    value="FAJRIANSYAH">
+                                                value="{{ $data_rumah->user->name ?? 'nihil' }}">
                                             </div>
                                         </div>
                                     </div>

@@ -185,6 +185,7 @@
                                                 <th>Kode Rumah</th>
                                                 <th>Type</th>
                                                 <th>Alamat</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -192,7 +193,8 @@
                                                 @foreach ($data_rumah as $data)
                                                     <td>{{ $data->kode_rumah }}</td>
                                                     <td>
-                                                        @if ($data->type) <!-- Pastikan type_id tidak null -->
+                                                        @if ($data->type)
+                                                            <!-- Pastikan type_id tidak null -->
                                                             {{ $data->type->nama_type }}
                                                         @else
                                                             <!-- Tindakan jika type_id null, misalnya menampilkan pesan -->
@@ -200,6 +202,31 @@
                                                         @endif
                                                     </td>
                                                     <td>{{ $data->alamat }}</td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                ACTION <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li> <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        onclick="window.open('{{ route('data_rumah.show',$data->id) }}', '_blank')">Detail</button>
+                                                                </li>
+                                                                <li> <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        onclick="window.open('{{ route('data_rumah.edit',$data->id) }}', '_blank')">Edit</button>
+                                                                </li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                        class="btn btn-default waves-effect m-r-20"
+                                                                        data-toggle="modal"
+                                                                        data-target="#destroytyperumah">Delete</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
                                             </tr>
             @endforeach
             {{-- <tr>
