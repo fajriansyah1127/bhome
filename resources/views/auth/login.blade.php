@@ -52,11 +52,16 @@
                             <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                     </div>
+                    @if ($errors->has('email'))
+                    <div class="alert alert-danger mt-2">
+                        <strong>Error:</strong> {{ $errors->first('email') }}
+                    </div>
+                @endif
                     <div class="row">
-                        {{-- <div class="col-xs-8 p-t-5">
+                        <div class="col-xs-8 p-t-5">
                             <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
                             <label for="rememberme">Remember Me</label>
-                        </div> --}}
+                        </div>
                         <div class="col-xs-4">
                             <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
                         </div>
@@ -92,8 +97,8 @@
 </body>
 
 </html>
-
-{{-- <x-guest-layout>
+{{-- 
+ <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -139,4 +144,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout> --}}
+</x-guest-layout>  --}}

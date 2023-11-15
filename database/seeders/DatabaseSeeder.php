@@ -83,6 +83,17 @@ class DatabaseSeeder extends Seeder
             'perusahaan' => 'Perusahaan 4'
         ]);
 
+        User::factory()->create([
+            'name' => 'Penghuni Abal abal',
+            'email' => 'penghuni@gmail.com',
+            'password' => bcrypt('password'),
+            'nik' => '654321',
+            'kontak' => '123124',
+            'alamat' => 'Adwadsa 4',
+            'role' => 'Guest',
+            'perusahaan' => 'Perusahaan 4'
+        ]);
+
         Type::factory()->create([
             'nama_type' => 'Type 200',
             'spesifikasi' => '4 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang & Garasi',
@@ -167,18 +178,18 @@ class DatabaseSeeder extends Seeder
             'jumlah_penghuni' => null,
         ]);
 
-        // Datarumah::factory()->create([
-        //     'user_id' => null,
-        //     'type_id' => '2',
-        //     'kode_rumah' => 'Dgt05',
-        //     'alamat' => 'Jl. Digital No. 04',
-        //     'pdam' => '1010440028',
-        //     'pln' => '232010533351',
-        //     'latitude' => '-1.2515264798011100',
-        //     'longtitude' => '116.86370728644600',
-        //     'jatuh_tempo' => null,
-        //     'foto' => null,
-        //     'jumlah_penghuni' => null,
-        // ]);
+        Datarumah::factory()->create([
+            'user_id' => '7',
+            'type_id' => '2',
+            'kode_rumah' => 'Dgt05',
+            'alamat' => 'Jl. Digital No. 04',
+            'pdam' => '1010440028',
+            'pln' => '232010533351',
+            'latitude' => '-1.250935',
+            'longtitude' => ' 116.864504',
+            'jatuh_tempo' => null,
+            'foto' => null,
+            'jumlah_penghuni' => null,
+        ]);
     }
 }

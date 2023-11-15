@@ -17,8 +17,11 @@ class DataRumahController extends Controller
     public function index()
     {
         $type_rumah = Type::get();
-        $data_rumah = Datarumah::with('type')->get();;
-        return view('data_rumah.index', compact('type_rumah','data_rumah'));
+        $data_rumah = Datarumah::with('type')->get();
+        $data_rumah_penghuni = Datarumah::with('type')
+        ->where('user_id', null)
+        ->get();
+        return view('data_rumah.index', compact('type_rumah','data_rumah','data_rumah_penghuni'));
     }
 
     /**

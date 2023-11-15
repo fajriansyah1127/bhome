@@ -77,14 +77,14 @@
                                                     <i class="material-icons">home</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" value="{{ $data_rumah->kode_rumah }}"
+                                                    <input type="text" value="{{ $data_rumah->kode_rumah }}" name="kode_rumah"
                                                         class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <b>Basic</b>
-                                            <select class="form-control show-tick" name="type">
+                                            <select class="form-control show-tick" name="type_id">
                                                 @foreach ($type_rumah as $data_type)
                                                     <option value="{{ $data_type->id }}" {{ $data_type->id == $data_rumah->type_id ? 'selected' : '' }}>
                                                         {{ $data_type->nama_type }}
@@ -100,7 +100,7 @@
                                                     <i class="material-icons">electric_bolt</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control time12"
+                                                    <input type="text" class="form-control time12" name="pln"
                                                         value="{{ $data_rumah->pln }}">
                                                 </div>
                                             </div>
@@ -112,7 +112,7 @@
                                                     <i class="material-icons">water_drop</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control datetime"
+                                                    <input type="text" class="form-control datetime" name="pdam"
                                                         value="{{ $data_rumah->pdam }}">
                                                 </div>
                                             </div>
@@ -125,7 +125,7 @@
                                                     </i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control mobile-phone-number"
+                                                    <input type="text" class="form-control mobile-phone-number" name="alamat"
                                                         value="{{ $data_rumah->alamat }}">
                                                 </div>
                                             </div>
@@ -137,7 +137,7 @@
                                                     <i class="material-icons">gps_fixed</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control mobile-phone-number"
+                                                    <input type="text" class="form-control mobile-phone-number" name="latitude"
                                                         value="{{ $data_rumah->latitude }}">
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                     <i class="material-icons">gps_fixed</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control money-dollar"
+                                                    <input type="text" class="form-control money-dollar" name="longtitude"
                                                         value="{{ $data_rumah->longtitude }}">
                                                 </div>
                                             </div>

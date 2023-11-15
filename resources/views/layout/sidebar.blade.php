@@ -301,7 +301,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="{{ route('profile.index') }}">
                             <i class="material-icons">person</i>
                             <span>User</span>
                         </a>

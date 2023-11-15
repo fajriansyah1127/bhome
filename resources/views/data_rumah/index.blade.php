@@ -442,7 +442,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($data_rumah_penghuni as $data)
+                                   
                                     <tr>
+                                        <td>{{ $data->alamat }}</td>
+                                        <td>{{ $data->kode_rumah }}/@if ($data->type)
+                                            <!-- Pastikan type_id tidak null -->
+                                            {{ $data->type->nama_type }}
+                                        @else
+                                            <!-- Tindakan jika type_id null, misalnya menampilkan pesan -->
+                                            Type not available
+                                        @endif</td>
+                                        <td>@if ($data->type)
+                                            <!-- Pastikan type_id tidak null -->
+                                            {{ $data->type->spesifikasi }}
+                                        @else
+                                            <!-- Tindakan jika type_id null, misalnya menampilkan pesan -->
+                                            Type not available
+                                        @endif</td>
+                                        <td>@if ($data->type)
+                                            <!-- Pastikan type_id tidak null -->
+                                            {{ $data->type->harga }}
+                                        @else
+                                            <!-- Tindakan jika type_id null, misalnya menampilkan pesan -->
+                                            Type not available
+                                        @endif</td>
+                                        <td> <a href="{{ asset('template') }}/images/image-gallery/1.jpg"
+                                                data-sub-html="Demo Description">
+                                                <img class="img-responsive thumbnail"
+                                                    src="{{ asset('template') }}/images/t120-bg.jpg"></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary waves-effect m-r-20"
+                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">AJUKAN</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    {{-- <tr>
                                         <td>Jl. Digital No. 01</td>
                                         <td>Dgt01/t120</td>
                                         <td>3 Kamar Tidur, 3 Kamar Mandi, Ruang Tamu, Ruang Keluarga, Dapur, Gudang
@@ -486,7 +521,7 @@
                                             <button type="button" class="btn btn-primary waves-effect m-r-20"
                                                 onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">AJUKAN</button>
                                         </td>
-                                    </tr>
+                                    </tr> --}}
 
                                 </tbody>
                             </table>
