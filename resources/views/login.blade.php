@@ -41,7 +41,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+                            <input type="email" class="form-control" name="email" :value="old('email')" placeholder="Email" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">

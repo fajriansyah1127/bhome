@@ -19,9 +19,6 @@ use App\Http\Controllers\PengajuanController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -38,6 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/penghuni', PenghuniController::class)->Middleware('admin');
     Route::resource('/data_rumah', DataRumahController::class);
     Route::resource('/pengajuan', PengajuanController::class);
+
+    
 });
 
 require __DIR__ . '/auth.php';

@@ -30,9 +30,9 @@ class Datarumah extends Model
         return $this->belongsTo(Type::class);
     }
 
-    public function user()
+    public function pengajuan()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Pengajuan::class);
     }
 
 }

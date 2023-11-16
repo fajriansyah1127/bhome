@@ -18,9 +18,9 @@ class DatarumahFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => function () {
-                return factory(App\Models\User::class)->create()->id;
-            },
+            // 'pengajuan_id' => function () {
+            //     return factory(App\Models\Pengajuan::class)->create()->id;
+            // },
             'type_id' => function () {
                 return factory(App\Models\Type::class)->create()->id;
             },

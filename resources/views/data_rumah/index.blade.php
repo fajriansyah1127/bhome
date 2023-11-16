@@ -473,7 +473,7 @@
                                                     src="{{ asset('template') }}/images/t120-bg.jpg"></td>
                                         <td>
                                             <button type="button" class="btn btn-primary waves-effect m-r-20"
-                                                onclick="window.open('{{ route('type_rumah.edit', 1) }}', '_blank')">AJUKAN</button>
+                                                onclick="window.open('{{ route('pengajuan.show',$data->id) }}', '_blank')">AJUKAN</button>
                                         </td>
                                     </tr>
                                     @endforeach

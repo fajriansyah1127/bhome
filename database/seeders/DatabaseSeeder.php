@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Datarumah::factory()->create([
-            'user_id' => null,
+            'pengajuan_id' => null,
             'type_id' => '2',
             'kode_rumah' => 'Dgt01',
             'alamat' => 'Jl. Digital No. 01',
@@ -137,7 +137,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Datarumah::factory()->create([
-            'user_id' => null,
+            'pengajuan_id' => null,
             'type_id' => '2',
             'kode_rumah' => 'Dgt02',
             'alamat' => 'Jl. Digital No. 02',
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Datarumah::factory()->create([
-            'user_id' => null,
+            'pengajuan_id' => null,
             'type_id' => '2',
             'kode_rumah' => 'Dgt03',
             'alamat' => 'Jl. Digital No. 03',
@@ -165,7 +165,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Datarumah::factory()->create([
-            'user_id' => null,
+            'pengajuan_id' => null,
             'type_id' => '2',
             'kode_rumah' => 'Dgt04',
             'alamat' => 'Jl. Digital No. 04',
@@ -179,7 +179,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Datarumah::factory()->create([
-            'user_id' => '7',
+            'pengajuan_id' => null,
             'type_id' => '2',
             'kode_rumah' => 'Dgt05',
             'alamat' => 'Jl. Digital No. 04',

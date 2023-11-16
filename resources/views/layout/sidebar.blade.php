@@ -289,7 +289,7 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="/">
+                        <a href="/dashboard">
                             <i class="material-icons">dashboard</i>
                             <span>Dashbooard</span>
                         </a>

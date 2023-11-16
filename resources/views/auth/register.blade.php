@@ -157,7 +157,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="name" placeholder="Name " required
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}"  placeholder="Name " required
                                 autofocus>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                             <i class="material-icons">contacts</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="kontak"
+                            <input type="text" class="form-control" name="kontak" value="{{ old('kontak') }}" 
                                 placeholder="Nomor Kontak " required autofocus>
                         </div>
                         @if ($errors->has('kontak'))
@@ -180,7 +180,7 @@
                             <i class="material-icons">location_on</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="alamat"
+                            <input type="text" class="form-control" name="alamat" value="{{ old('alamat') }}" 
                                 placeholder="Alamat" required autofocus>
                         </div>
                         @if ($errors->has('alamat'))
@@ -194,7 +194,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="nik"
+                            <input type="text" class="form-control" name="nik" value="{{ old('nik') }}" 
                                 placeholder="Nik (Nomor Induk Karyawan) " required autofocus>
                         </div>
                         @if ($errors->has('nik'))
@@ -208,7 +208,7 @@
                             <i class="material-icons">business</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="perusahaan"
+                            <input type="text" class="form-control" name="perusahaan" value="{{ old('perusahaan') }}" 
                                 placeholder="Nama Perusahaan" required autofocus>
                         </div>
                         @if ($errors->has('perusahaan'))
@@ -222,7 +222,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address"
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}"  placeholder="Email Address"
                                 required>
                         </div>
                         @if ($errors->has('email'))

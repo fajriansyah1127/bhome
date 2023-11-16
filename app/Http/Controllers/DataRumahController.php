@@ -19,7 +19,7 @@ class DataRumahController extends Controller
         $type_rumah = Type::get();
         $data_rumah = Datarumah::with('type')->get();
         $data_rumah_penghuni = Datarumah::with('type')
-        ->where('user_id', null)
+        ->where('pengajuan_id', null)
         ->get();
         return view('data_rumah.index', compact('type_rumah','data_rumah','data_rumah_penghuni'));
     }
@@ -60,7 +60,7 @@ class DataRumahController extends Controller
         // dd($filename);
         
 
-        $notif = Datarumah::create([
+        $notif = Pengajuan::create([
             'type_id' => $request->type,
             'kode_rumah' => $request->kode_rumah,
             'alamat' => $request->alamat,

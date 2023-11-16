@@ -72,10 +72,13 @@
                                             <span class="input-group-addon">
                                                 <i class="material-icons">home</i>
                                             </span>
-                                            <div>
-                                                <input type="text" disabled value="11223344111" class="form-control date"
-                                                    placeholder="Ex: 30/07/2016">
-                                            </div>
+                                            @foreach ($data_pengajuan as $pengajuan)
+                                                <div>
+                                                    <input type="text" disabled
+                                                        value="{{ $pengajuan->rumah->kode_rumah }}"
+                                                        class="form-control date" placeholder="Ex: 30/07/2016">
+                                                </div>
+                                            @endforeach 
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -151,10 +154,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>NIK Penghuni</b>
+                                        <b>NIK Calon Penghuni</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">people</i>
+                                                <i class="material-icons">person</i>
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control money-euro"
@@ -163,10 +166,44 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <b>Nama Penghuni</b>
+                                        <b>Nama Calon Penghuni</b>
                                         <div class="input-group">
                                             <span class="input-group-addon">
-                                                <i class="material-icons">people</i>
+                                                <i class="material-icons">person</i>
+                                            </span>
+                                            <div>
+                                                <input type="text" disabled class="form-control ip" value="FAJRIANSYAH">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <b>Email Calon Penghuni</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">person</i>
+                                            </span>
+                                            <div>
+                                                <input type="text" disabled class="form-control ip" value="FAJRIANSYAH">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <b>Perusahaan Calon Penghuni</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">business</i>
+                                            </span>
+                                            <div>
+                                                <input type="text" disabled class="form-control ip"
+                                                    value="FAJRIANSYAH">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <b>Kontak</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">contacts</i>
                                             </span>
                                             <div>
                                                 <input type="text" disabled class="form-control ip"
@@ -181,13 +218,24 @@
                                                 <i class="material-icons">groups</i>
                                             </span>
                                             <div class="form-line">
-                                                <input type="number" min="1" max="8"
-                                                    class="form-control number" placeholder="Max 8">
+                                                <input type="number" min="1" class="form-control number"
+                                                    required>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-3">
-                                        <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect">SETUJUI</button>
+                                        <b>Foto Kartu Pegawai</b>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">image</i>
+                                            </span>
+                                            <input type="file" class="form-control" name="foto" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button"
+                                            class="btn btn-primary btn-lg m-l-15 waves-effect">AJUKAN</button>
                                     </div>
                                     {{-- <div class="col-md-3">
                                         <b>Serial Key</b>
