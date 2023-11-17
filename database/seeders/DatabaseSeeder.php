@@ -122,74 +122,74 @@ class DatabaseSeeder extends Seeder
             'harga' => '7800000'
         ]);
 
-        Datarumah::factory()->create([
-            'pengajuan_id' => null,
-            'type_id' => '2',
-            'kode_rumah' => 'Dgt01',
-            'alamat' => 'Jl. Digital No. 01',
-            'pdam' => '1010440023',
-            'pln' => '232010533343',
-            'latitude' => '-1.251590837460210',
-            'longtitude' => '116.86339606535200',
-            'jatuh_tempo' => null,
-            'foto' => 'Kdrmh123.jpeg',
-            'jumlah_penghuni' => '',
-        ]);
+        // Datarumah::factory()->create([
+        //     'pengajuan_id' => null,
+        //     'type_id' => '2',
+        //     'kode_rumah' => 'Dgt01',
+        //     'alamat' => 'Jl. Digital No. 01',
+        //     'pdam' => '1010440023',
+        //     'pln' => '232010533343',
+        //     'latitude' => '-1.251590837460210',
+        //     'longtitude' => '116.86339606535200',
+        //     'jatuh_tempo' => null,
+        //     'foto' => 'Kdrmh123.jpeg',
+        //     'jumlah_penghuni' => '',
+        // ]);
 
-        Datarumah::factory()->create([
-            'pengajuan_id' => null,
-            'type_id' => '2',
-            'kode_rumah' => 'Dgt02',
-            'alamat' => 'Jl. Digital No. 02',
-            'pdam' => '1010440034',
-            'pln' => '232010533335',
-            'latitude' => '-1.2517088264977700',
-            'longtitude' => '116.86359996882700',
-            'jatuh_tempo' => null,
-            'foto' => 'Kdrmh123.jpeg',
-            'jumlah_penghuni' => null,
-        ]);
+        // Datarumah::factory()->create([
+        //     'pengajuan_id' => null,
+        //     'type_id' => '2',
+        //     'kode_rumah' => 'Dgt02',
+        //     'alamat' => 'Jl. Digital No. 02',
+        //     'pdam' => '1010440034',
+        //     'pln' => '232010533335',
+        //     'latitude' => '-1.2517088264977700',
+        //     'longtitude' => '116.86359996882700',
+        //     'jatuh_tempo' => null,
+        //     'foto' => 'Kdrmh123.jpeg',
+        //     'jumlah_penghuni' => null,
+        // ]);
 
-        Datarumah::factory()->create([
-            'pengajuan_id' => null,
-            'type_id' => '2',
-            'kode_rumah' => 'Dgt03',
-            'alamat' => 'Jl. Digital No. 03',
-            'pdam' => '1010440027',
-            'pln' => '232010533350',
-            'latitude' => '-1.2513870382009800',
-            'longtitude' => '116.86352484649400',
-            'jatuh_tempo' => null,
-            'foto' => 'Kdrmh123.jpeg',
-            'jumlah_penghuni' => null,
-        ]);
+        // Datarumah::factory()->create([
+        //     'pengajuan_id' => null,
+        //     'type_id' => '2',
+        //     'kode_rumah' => 'Dgt03',
+        //     'alamat' => 'Jl. Digital No. 03',
+        //     'pdam' => '1010440027',
+        //     'pln' => '232010533350',
+        //     'latitude' => '-1.2513870382009800',
+        //     'longtitude' => '116.86352484649400',
+        //     'jatuh_tempo' => null,
+        //     'foto' => 'Kdrmh123.jpeg',
+        //     'jumlah_penghuni' => null,
+        // ]);
 
-        Datarumah::factory()->create([
-            'pengajuan_id' => null,
-            'type_id' => '2',
-            'kode_rumah' => 'Dgt04',
-            'alamat' => 'Jl. Digital No. 04',
-            'pdam' => '1010440028',
-            'pln' => '232010533351',
-            'latitude' => '-1.2515264798011100',
-            'longtitude' => '116.86370728644600',
-            'jatuh_tempo' => null,
-            'foto' => 'Kdrmh123.jpeg',
-            'jumlah_penghuni' => null,
-        ]);
+        // Datarumah::factory()->create([
+        //     'pengajuan_id' => null,
+        //     'type_id' => '2',
+        //     'kode_rumah' => 'Dgt04',
+        //     'alamat' => 'Jl. Digital No. 04',
+        //     'pdam' => '1010440028',
+        //     'pln' => '232010533351',
+        //     'latitude' => '-1.2515264798011100',
+        //     'longtitude' => '116.86370728644600',
+        //     'jatuh_tempo' => null,
+        //     'foto' => 'Kdrmh123.jpeg',
+        //     'jumlah_penghuni' => null,
+        // ]);
 
-        Datarumah::factory()->create([
-            'pengajuan_id' => null,
-            'type_id' => '2',
-            'kode_rumah' => 'Dgt05',
-            'alamat' => 'Jl. Digital No. 04',
-            'pdam' => '1010440028',
-            'pln' => '232010533351',
-            'latitude' => '-1.250935',
-            'longtitude' => ' 116.864504',
-            'jatuh_tempo' => null,
-            'foto' => null,
-            'jumlah_penghuni' => null,
-        ]);
+        // Datarumah::factory()->create([
+        //     'pengajuan_id' => null,
+        //     'type_id' => '2',
+        //     'kode_rumah' => 'Dgt05',
+        //     'alamat' => 'Jl. Digital No. 04',
+        //     'pdam' => '1010440028',
+        //     'pln' => '232010533351',
+        //     'latitude' => '-1.250935',
+        //     'longtitude' => ' 116.864504',
+        //     'jatuh_tempo' => null,
+        //     'foto' => null,
+        //     'jumlah_penghuni' => null,
+        // ]);
     }
 }

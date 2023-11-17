@@ -13,6 +13,7 @@ class Pengajuan extends Model
         'user_id',
         'rumah_id',
         'foto',
+        'jumlah_penghuni',
         'status_pengajuan',
         'catatan'
     ];

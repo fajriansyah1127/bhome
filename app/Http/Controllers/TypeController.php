@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Exception;
-use RealRashid\SweetAlert\Facades\Alert;
+// use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;

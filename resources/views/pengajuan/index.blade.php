@@ -46,8 +46,8 @@
                         <div class="header">
                             <h2>
                                 DATA RUMAH YANG DIAJUKAN
-                                <small>Taken from <a href="https://github.com/RobinHerbots/jquery.inputmask"
-                                        target="_blank">Mohon diisi data berikut</a></small>
+                                {{-- <small>Taken from <a href="https://github.com/RobinHerbots/jquery.inputmask"
+                                        target="_blank">Mohon diisi data berikut</a></small> --}}
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -64,198 +64,212 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div class="demo-masked-input">
-                                <div class="row clearfix">
-                                    <div class="col-md-3">
-                                        <b>Kode Rumah</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">home</i>
-                                            </span>
-                                            @foreach ($data_pengajuan as $pengajuan)
-                                                <div>
-                                                    <input type="text" disabled
-                                                        value="{{ $pengajuan->rumah->kode_rumah }}"
-                                                        class="form-control date" placeholder="Ex: 30/07/2016">
-                                                </div>
-                                            @endforeach 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Type Rumah</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">home</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control" value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>ID PLN</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">electric_bolt</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control time12"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>ID PDAM</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">water_drop</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control datetime"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Alamat</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">add_location
-                                                </i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control mobile-phone-number"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Latitude</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">gps_fixed</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control mobile-phone-number"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Longtitude</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">gps_fixed</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control money-dollar"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>NIK Calon Penghuni</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">person</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control money-euro"
-                                                    value="11223344111">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Nama Calon Penghuni</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">person</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control ip" value="FAJRIANSYAH">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Email Calon Penghuni</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">person</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control ip" value="FAJRIANSYAH">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Perusahaan Calon Penghuni</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">business</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control ip"
-                                                    value="FAJRIANSYAH">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Kontak</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">contacts</i>
-                                            </span>
-                                            <div>
-                                                <input type="text" disabled class="form-control ip"
-                                                    value="FAJRIANSYAH">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <b>Jumlah Penghuni</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">groups</i>
-                                            </span>
-                                            <div class="form-line">
-                                                <input type="number" min="1" class="form-control number"
-                                                    required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <b>Foto Kartu Pegawai</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">image</i>
-                                            </span>
-                                            <input type="file" class="form-control" name="foto" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="button"
-                                            class="btn btn-primary btn-lg m-l-15 waves-effect">STATUS</button>
-                                    </div>
-                                    {{-- <div class="col-md-3">
-                                        <b>Serial Key</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">vpn_key</i>
-                                            </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control key"
-                                                    placeholder="Ex: XXX0-XXXX-XX00-0XXX">
-                                            </div>
-                                        </div>
-                                    </div> --}}
+                            @if ($data_pengajuan_penghuni === null)
+                                <div class="alert alert-info">
+                                    <strong>Anda Belum Mengajukan!</strong> Silahkan melakukan pengajuan rumah.
                                 </div>
-                            </div>
+                            @else
+                                @foreach ($data_pengajuan_penghuni as $item)
+                                    <div class="demo-masked-input">
+                                        <div class="row clearfix">
+                                            <div class="col-md-3">
+                                                <b>Kode Rumah</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">home</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled
+                                                            value="{{ $item->rumah->kode_rumah }}" class="form-control date"
+                                                            placeholder="Contoh: 30/07/2016">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Type Rumah</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">home</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control"
+                                                            value="{{ $item->rumah->type->nama_type }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>ID PLN</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">electric_bolt</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control time12"
+                                                            value="{{ $item->rumah->pln }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>ID PDAM</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">water_drop</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control datetime"
+                                                            value="{{ $item->rumah->pdam }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Alamat</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">add_location
+                                                        </i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled
+                                                            class="form-control mobile-phone-number"
+                                                            value="{{ $item->rumah->alamat }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Latitude</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">gps_fixed</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled
+                                                            class="form-control mobile-phone-number"
+                                                            value="{{ $item->rumah->latitude }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Longtitude</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">gps_fixed</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control money-dollar"
+                                                            value="{{ $item->rumah->longtitude }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>NIK Calon Penghuni</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">person</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control money-euro"
+                                                            value="{{ $item->user->nik }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Nama Calon Penghuni</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">person</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control ip"
+                                                            value="{{ $item->user->name }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Email Calon Penghuni</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">person</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control ip"
+                                                            value="{{ $item->user->email }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Perusahaan Calon Penghuni</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">business</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control ip"
+                                                            value="{{ $item->user->perusahaan }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Kontak</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">contacts</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="text" disabled class="form-control ip"
+                                                            value="{{ $item->user->kontak }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <b>Jumlah Penghuni</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">groups</i>
+                                                    </span>
+                                                    <div>
+                                                        <input type="number" min="1" class="form-control number"
+                                                            value="{{ $item->jumlah_penghuni }}" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <b>Foto Kartu Pegawai</b>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">image</i>
+                                                    </span>
+                                                    <input type="file" class="form-control" name="foto" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="button"
+                                                    class="btn btn-primary btn-lg m-l-15 waves-effect">{{ $item->status_pengajuan }}</button>
+                                            </div>
+                                            {{-- <div class="col-md-3">
+                                                    <b>Serial Key</b>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">vpn_key</i>
+                                                        </span>
+                                                        <div class="form-line">
+                                                            <input type="text" class="form-control key"
+                                                                placeholder="Ex: XXX0-XXXX-XX00-0XXX">
+                                                        </div>
+                                                    </div>
+                                                </div> --}}
+                                        </div>
+                                    </div>
                         </div>
+
                     </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
-            <!-- #END# Masked Input -->
+        </div>
+        <!-- #END# Masked Input -->
         </div>
     </section>
 @endsection

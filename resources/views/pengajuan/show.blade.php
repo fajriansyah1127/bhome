@@ -235,7 +235,7 @@
                                                 <span class="input-group-addon">
                                                     <i class="material-icons">image</i>
                                                 </span>
-                                                <input type="file" class="form-control" name="foto_penghuni" required>
+                                                <input type="file" class="form-control" name="foto_kartu_penghuni" required>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
