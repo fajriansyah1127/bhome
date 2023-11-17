@@ -235,7 +235,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <button type="button"
-                                            class="btn btn-primary btn-lg m-l-15 waves-effect">AJUKAN</button>
+                                            class="btn btn-primary btn-lg m-l-15 waves-effect">STATUS</button>
                                     </div>
                                     {{-- <div class="col-md-3">
                                         <b>Serial Key</b>
