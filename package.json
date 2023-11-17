@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "adminbsb-materialdesign": "^1.0.7",
         "sweetalert": "^2.1.2"
     }
 }
