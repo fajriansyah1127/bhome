@@ -63,7 +63,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{ asset('template') }}/pages/widgets/infobox/infobox-1.html">Rekap
+                                <a  href="{{ route('keuangan.index') }}">Rekap
                                     Keuangan</a>
                             </li>
                             <li>

@@ -11,6 +11,7 @@ class Datarumah extends Model
     protected $table = 'rumah';
     protected $fillable = [
         'user_id',
+        'pengajuan_id',
         'type_id',
         'kode_rumah',
         'alamat',

@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('catatan');
             $table->string('jumlah_penghuni');
-            $table->enum('status_pengajuan', ['belum dikonfirmasi', 'sudah dikonfirmasi dan disetuji','di tolak'])->default('belum dikonfirmasi');
+            $table->string('status_pengajuan');
             $table->timestamps();
         });
 

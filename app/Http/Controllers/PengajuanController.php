@@ -21,7 +21,9 @@ class PengajuanController extends Controller
         $data_pengajuan_penghuni = Pengajuan::with('rumah', 'user')
             ->where('user_id', $authenticatedUserId)
             ->get();
-        return view('pengajuan.index', compact('data_user', 'data_rumah', 'data_pengajuan_penghuni'));
+        $data_pengajuan_admin = Pengajuan::with('rumah', 'user')
+        ->get();
+        return view('pengajuan.index', compact('data_user', 'data_rumah', 'data_pengajuan_penghuni', 'data_pengajuan_admin'));
     }
 
 
@@ -41,38 +43,46 @@ class PengajuanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'rumah_id' => 'required', // Tambahkan validasi untuk rumah_id
-            'jumlah_penghuni' => 'required|integer', // Tambahkan validasi untuk jumlah_penghuni
-            'foto_kartu_penghuni' => 'required|file|image|mimes:jpg,jpeg,bmp,png', // Tambahkan validasi untuk foto_kartu_pegawai
+            'rumah_id' => 'required',
+            'jumlah_penghuni' => 'required|integer',
+            'foto_kartu_penghuni' => 'required|file|image|mimes:jpg,jpeg,bmp,png',
         ]);
-        // return $request->all();
+    
         // Mendapatkan ID pengguna yang sedang diotentikasi
         $authenticatedUserId = Auth::id();
-
+    
+        // Periksa apakah pengguna sudah memiliki pengajuan
+        $existingPengajuan = Pengajuan::where('user_id', $authenticatedUserId)->first();
+    
+        if ($existingPengajuan) {
+            // Pengguna sudah memiliki pengajuan, kirim pesan error
+            return redirect()->back()->withErrors(['error' => 'Anda sudah memiliki pengajuan sebelumnya.']);
+        }
+    
+        // Lanjutkan dengan mengunggah foto dan membuat pengajuan baru
         if ($file = $request->file('foto_kartu_penghuni')) {
             $filename = 'foto_' . $authenticatedUserId . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('foto_penghuni'), $filename);
         } else {
-            $filename = 'default_foto_penghuni.jpg'; // Ganti dengan nilai default jika foto tidak diunggah
+            $filename = 'default_foto_penghuni.jpg';
         }
-
+    
         $notif = Pengajuan::create([
             'foto' => $filename,
-            'user_id' => $authenticatedUserId, // Menggunakan ID pengguna yang sedang diotentikasi
+            'user_id' => $authenticatedUserId,
             'rumah_id' => $request->rumah_id,
             'jumlah_penghuni' => $request->jumlah_penghuni,
-            'status_pengajuan' => 'Belum Dikonfirmasi', // Menambahkan status pengajuan
+            'status_pengajuan' => 'Belum Dikonfirmasi',
             'catatan' => 'Menunggu Konfirmasi',
         ]);
-
+    
         if ($notif) {
-            //redirect dengan pesan sukses
             return redirect('/pengajuan');
         } else {
-            //redirect dengan pesan error
             return redirect()->back();
         }
     }
+    
 
     /**
      * Display the specified resource.
@@ -106,10 +116,44 @@ class PengajuanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pengajuan $pengajuan)
-    {
-        //
+    public function update(Request $request, $id)
+{
+    // Temukan data pengajuan dengan id yang sesuai
+    $data_pengajuan = Pengajuan::find($id);
+
+    // Pastikan data pengajuan ada sebelum melanjutkan
+    if ($data_pengajuan) {
+        // Update data pengajuan
+        $data_pengajuan->update([
+            'catatan' => $request->input('catatan'),
+            'status_pengajuan' => $request->input('status_pengajuan'),
+        ]);
+
+        // Temukan data rumah berdasarkan kode_rumah
+        $data_rumah = Datarumah::where('kode_rumah', $request->input('kode_rumah'))->first();
+
+        // Pastikan data rumah ada sebelum melanjutkan
+        if ($data_rumah) {
+            // Jika catatan menunjukkan diterima, ubah pengajuan_id di tabel datarumah
+            if ($request->input('status_pengajuan') == 'DITERIMA') {
+                $data_rumah->update([
+                    'pengajuan_id' => $data_pengajuan->id,
+                ]);
+            }
+            // Redirect dengan pesan sukses
+            return redirect()->route('data_rumah.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        } else {
+            // Redirect dengan pesan error jika data rumah tidak ditemukan
+            return redirect()->route('pengajuan.index')->with(['error' => 'Data Rumah Tidak Ditemukan!']);
+        }
+    } else {
+        // Redirect dengan pesan error jika data pengajuan tidak ditemukan
+        return redirect()->route('data_rumah.index')->with(['error' => 'Data Pengajuan Tidak Ditemukan!']);
     }
+}
+
+    
+    
 
     /**
      * Remove the specified resource from storage.

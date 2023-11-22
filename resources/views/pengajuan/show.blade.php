@@ -43,6 +43,11 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
+                        @if ($errors->any())
+                            <div class="alert alert-danger mt-2">
+                                <strong>Error:</strong> {{ $errors->first('error') }}
+                            </div>
+                        @endif
                         <div class="header">
                             <h2>
                                 DATA RUMAH YANG DIAJUKAN
@@ -223,8 +228,8 @@
                                                     <i class="material-icons">groups</i>
                                                 </span>
                                                 <div class="form-line">
-                                                    <input type="number" min="1" class="form-control number" name="jumlah_penghuni"
-                                                        required>
+                                                    <input type="number" min="1" class="form-control number"
+                                                        name="jumlah_penghuni" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +240,8 @@
                                                 <span class="input-group-addon">
                                                     <i class="material-icons">image</i>
                                                 </span>
-                                                <input type="file" class="form-control" name="foto_kartu_penghuni" required>
+                                                <input type="file" class="form-control" name="foto_kartu_penghuni"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
