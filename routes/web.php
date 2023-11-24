@@ -7,7 +7,7 @@ use App\Http\Controllers\PenghuniController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataRumahController;
 use App\Http\Controllers\PengajuanController;
-
+use App\Http\Controllers\KeuanganController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/penghuni', PenghuniController::class)->Middleware('admin');
     Route::resource('/data_rumah', DataRumahController::class);
     Route::resource('/pengajuan', PengajuanController::class);
-
+    Route::resource('/keuangan', KeuanganController::class);
     
 });
 

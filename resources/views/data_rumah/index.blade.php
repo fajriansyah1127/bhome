@@ -467,10 +467,10 @@
                                             <!-- Tindakan jika type_id null, misalnya menampilkan pesan -->
                                             Type not available
                                         @endif</td>
-                                        <td> <a href="{{ asset('template') }}/images/image-gallery/1.jpg"
+                                        <td> <a href="foto_rumah/{{ $data->foto }}"
                                                 data-sub-html="Demo Description">
                                                 <img class="img-responsive thumbnail"
-                                                    src="{{ asset('template') }}/images/t120-bg.jpg"></td>
+                                                    src="foto_rumah/{{ $data->foto }}"></td>
                                         <td>
                                             <button type="button" class="btn btn-primary waves-effect m-r-20"
                                                 onclick="window.open('{{ route('pengajuan.show',$data->id) }}', '_blank')">AJUKAN</button>
