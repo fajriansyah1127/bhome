@@ -608,7 +608,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-md-3">
                                             <b>Status Pengajuan</b>
                                             <button type="button"
@@ -618,7 +618,8 @@
                                         <div class="col-sm-4">
                                             <b>Status Pembayaran</b>
                                             <button type="button" class="btn btn-danger btn-lg m-l-15 waves-effect">BELUM
-                                                LUNAS Silahkan melakukan <br> pembayaran ke norek 11181027 BNI an reg6</button>
+                                                LUNAS Silahkan melakukan <br> pembayaran ke norek 11181027 BNI an
+                                                reg6</button>
                                         </div>
 
                                         {{-- <div class="col-md-3">
@@ -641,11 +642,14 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    @endforeach
-                @endif
             </div>
+        </div>
+
+        </div>
+        @endforeach
+        @endif
+        </div>
         </div>
         @endif
         </div>
