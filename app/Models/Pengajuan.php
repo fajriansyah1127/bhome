@@ -12,8 +12,10 @@ class Pengajuan extends Model
     protected $fillable = [
         'user_id',
         'rumah_id',
+        'kode_pengajuan',
         'foto',
         'jumlah_penghuni',
+        'status_pembayaran',
         'status_pengajuan',
         'catatan'
     ];
@@ -29,5 +31,4 @@ class Pengajuan extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

@@ -471,10 +471,10 @@
                                                     Type not available
                                                 @endif
                                             </td>
-                                            <td> <a href="{{ asset('foto_rumah2') }}/{{ $data->foto }}"
+                                            <td> <a href="{{ asset('foto_rumah') }}/{{ $data->foto }}"
                                                     data-sub-html="Demo Description">
                                                     <img class="img-responsive thumbnail"
-                                                        src="{{ asset('foto_rumah2') }}/{{ $data->foto }}">
+                                                        src="{{ asset('foto_rumah') }}/{{ $data->foto }}">
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-primary waves-effect m-r-20"

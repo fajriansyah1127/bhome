@@ -4,7 +4,7 @@
         <div class="container-fluid">
             @if (auth()->user()->role == 'Admin')
                 <div class="block-header">
-                    <h2>DATA PENGAJUAN RUMAH</h2>
+                    <h2> DATA RUMAH YANG DIAJUKAN OLEH PENGHUNI</h2>
                 </div>
             @elseif (auth()->user()->role == 'Guest')
                 <div class="block-header">
@@ -54,7 +54,7 @@
                             <div class="card">
                                 <div class="header">
                                     <h2>
-                                        DATA RUMAH YANG DIAJUKAN OLEH PENGHUNI
+                                        PENGAJUAN HUNI OLEH
                                         {{-- <small>Taken from <a href="https://github.com/RobinHerbots/jquery.inputmask"
                                         target="_blank">Mohon diisi data berikut</a></small> --}}
                                     </h2>
@@ -597,30 +597,43 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-4">
-                                            <b>Catatan</b>
+                                        <div class="col-md-3">
+                                            <b>Kode Pengajuan</b>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
-                                                    <i class="material-icons">note</i>
+                                                    <i class="material-icons">groups</i>
                                                 </span>
+                                                <div>
+                                                    <input type="number" min="1" class="form-control number"
+                                                        value="{{ $item->id }}" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <b>Catatan</b>
+                                            <div class="input-group">
+                                                {{-- <span class="input-group-addon">
+                                                    <i class="material-icons">note</i>
+                                                </span> --}}
                                                 <div>
                                                     <textarea class="form-control" readonly>{{ $item->catatan }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-3">
+                                        <div class="col-sm-4">
                                             <b>Status Pengajuan</b>
                                             <button type="button"
                                                 class="btn btn-primary btn-lg m-l-15 waves-effect">{{ $item->status_pengajuan }}</button>
                                         </div>
 
-                                        <div class="col-sm-4">
+                                        {{-- <div class="col-sm-4">
                                             <b>Status Pembayaran</b>
                                             <button type="button" class="btn btn-danger btn-lg m-l-15 waves-effect">BELUM
                                                 LUNAS Silahkan melakukan <br> pembayaran ke norek 11181027 BNI an
                                                 reg6</button>
-                                        </div>
+                                        </div> --}}
 
                                         {{-- <div class="col-md-3">
                                             <b>Catatan</b>

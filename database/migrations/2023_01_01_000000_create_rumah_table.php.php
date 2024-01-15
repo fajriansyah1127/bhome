@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 return new class extends Migration
 {
@@ -32,10 +33,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable();
             $table->foreignId('rumah_id')->nullable();
+            $table->string('kode_pengajuan');
             $table->string('foto');
             $table->string('catatan');
             $table->string('jumlah_penghuni');
             $table->string('status_pengajuan');
+            $table->string('status_pembayaran');
             $table->timestamps();
         });
 
