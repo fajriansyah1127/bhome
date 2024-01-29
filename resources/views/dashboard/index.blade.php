@@ -104,7 +104,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div id="gmap_markers" class="gmap"></div>
+                            <div id="gmap_markers" class="gmap" ></div>
                         </div>
                     </div>
                 </div>

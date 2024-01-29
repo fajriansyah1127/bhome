@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengajuan;
 use App\Models\Datarumah;
+use App\Models\Pembayaran;
 use App\Models\User;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ class PengajuanController extends Controller
         $kode_pengajuan = IdGenerator::generate(['table' => 'pengajuan', 'field' => 'kode_pengajuan', 'length' => 10, 'prefix' => 'pengajuan']);
         $this->validate($request, [
             'rumah_id' => 'required',
+            'price'=> 'required',
             'jumlah_penghuni' => 'required|integer',
             'foto_kartu_penghuni' => 'required|file|image|mimes:jpg,jpeg,bmp,png',
         ]);
@@ -122,6 +124,7 @@ class PengajuanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request->all();
         // Temukan data pengajuan dengan id yang sesuai
         $data_pengajuan = Pengajuan::find($id);
 
@@ -142,6 +145,18 @@ class PengajuanController extends Controller
                 if ($request->input('status_pengajuan') == 'DITERIMA') {
                     $data_rumah->update([
                         'pengajuan_id' => $data_pengajuan->id,
+                    ]);
+    
+                    // Buat pembayaran jika status_pengajuan adalah 'DITERIMA'
+                    // $authenticatedUserId = auth()->user()->id; // Gantilah ini sesuai dengan cara Anda mendapatkan user ID yang terautentikasi
+                    // $kode_pengajuan = // Generate kode pengajuan sesuai kebutuhan Anda
+                    Pembayaran::create([
+                        'user_id' => $authenticatedUserId,
+                        'rumah_id' => $request->rumah_id,
+                        'pengajuan_id' => $data_pengajuan->id,
+                        'kode_pengajuan' => $kode_pengajuan,
+                        'status_pembayaran' => 'Menunggu Konfirmasi',
+                        'catatan' => 'Menunggu Konfirmasi',
                     ]);
                 }
                 // Redirect dengan pesan sukses

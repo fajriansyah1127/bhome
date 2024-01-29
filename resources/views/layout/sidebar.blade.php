@@ -63,7 +63,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a  href="{{ route('keuangan.index') }}">Rekap
+                                <a href="{{ route('keuangan.index') }}">Rekap
                                     Keuangan</a>
                             </li>
                             <li>
@@ -85,7 +85,14 @@
                             <span>Pengajuan</span>
                         </a>
                     </li>
-{{-- 
+
+                    <li>
+                        <a href="{{ route('pembayaran.index') }}">
+                            <i class="material-icons">payment</i>
+                            <span>Pembayaran</span>
+                        </a>
+                    </li>
+                    {{-- 
                     <li>
                         <a href="pages/changelogs.html">
                             <i class="material-icons">update</i>
@@ -313,7 +320,14 @@
                             <span>Pengajuan</span>
                         </a>
                     </li>
-{{-- 
+
+                    <li>
+                        <a href="{{ route('pembayaran.index') }}">
+                            <i class="material-icons">payment</i>
+                            <span>Pembayaran</span>
+                        </a>
+                    </li>
+                    {{-- 
                     <li>
                         <a href="pages/changelogs.html">
                             <i class="material-icons">update</i>

@@ -222,6 +222,18 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
+                                            <b>Harga per Tahun</b>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">money</i>
+                                                </span>
+                                                <div>
+                                                    <input type="text" nama="price" disabled class="form-control ip"
+                                                    value="{{ $data_rumah->type->harga }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
                                             <b>Jumlah Penghuni</b>
                                             <div class="input-group">
                                                 <span class="input-group-addon">

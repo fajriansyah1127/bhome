@@ -316,18 +316,6 @@
                                                     </div>
 
                                                     <div class="col-md-3">
-                                                        <b>Status Pembayaran</b>
-                                                        <div class="input-group">
-                                                            <select name="status_pengajuan"
-                                                                class="form-control show-tick">
-                                                                <option value="BELUM LUNAS" selected>BELUM LUNAS</option>
-                                                                <option value="LUNAS">LUNAS
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
                                                         <b>Catatan</b>
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
@@ -601,7 +589,7 @@
                                             <b>Kode Pengajuan</b>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
-                                                    <i class="material-icons">groups</i>
+                                                    <i class="material-icons">confirmation_number</i>
                                                 </span>
                                                 <div>
                                                     <input type="number" min="1" class="form-control number"

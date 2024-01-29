@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataRumahController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\KeuanganController;
+use App\Http\Controllers\PembayaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/data_rumah', DataRumahController::class);
     Route::resource('/pengajuan', PengajuanController::class);
     Route::resource('/keuangan', KeuanganController::class);
+    Route::resource('/pembayaran', PembayaranController::class);
     
 });
 
