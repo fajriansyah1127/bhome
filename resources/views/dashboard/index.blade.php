@@ -113,7 +113,7 @@
         </div>
     </section>
 @endsection
-
+{{-- ///dwadaw/// --}}
 @push('javascript')
     <!-- Jquery Core Js -->
     <script src="{{ asset('template/') }}/plugins/jquery/jquery.min.js"></script>
