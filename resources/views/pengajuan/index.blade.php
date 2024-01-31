@@ -387,26 +387,21 @@
                     </div>
                 @else
                     @foreach ($data_pengajuan_penghuni as $item)
+                    <div class="alert alert-success">
+                       Selamat Pengajuan Anda <b>Diterima</b> silahkan melakukan pembayaran ke rekening BNI Bhome 097201122 dengan nominal Rp.{{ $item->rumah->type->harga }} dan lakukan konfirmasi pembayaran dengan mengirim bukti pembayaran melalui <a href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pembayaran%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}." class="alert-link" target="_blank">link Ini</a>
+                    </div>
+                    {{-- <div class="alert alert-warning">
+                        You need to get <b>Google Map API Key</b> for display maps with <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" class="alert-link" target="_blank">this link</a> (Also you can find documentation on same page).
+                    </div>
+                    <div class="alert alert-danger">
+                        You need to get <b>Google Map API Key</b> for display maps with <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" class="alert-link" target="_blank">this link</a> (Also you can find documentation on same page).
+                    </div> --}}
                         <div class="card">
                             <div class="header">
                                 <h2>
                                     DATA RUMAH YANG DIAJUKAN
-                                    {{-- <small>Taken from <a href="https://github.com/RobinHerbots/jquery.inputmask"
-                                        target="_blank">Mohon diisi data berikut</a></small> --}}
                                 </h2>
-                                <ul class="header-dropdown m-r--5">
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                            role="button" aria-haspopup="true" aria-expanded="false">
-                                            <i class="material-icons">more_vert</i>
-                                        </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                               
                             </div>
                             <div class="body">
                                 <div class="demo-masked-input">
@@ -601,19 +596,14 @@
                                         <div class="col-sm-3">
                                             <b>Catatan</b>
                                             <div class="input-group">
-                                                {{-- <span class="input-group-addon">
+                                                <span class="input-group-addon">
                                                     <i class="material-icons">note</i>
-                                                </span> --}}
+                                                </span>
                                                 <div>
-                                                    <textarea class="form-control" readonly>{{ $item->catatan }}</textarea>
+                                                    <input type="text" disabled class="form-control ip"
+                                                    value="{{ $item->catatan }}">
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <b>Status Pengajuan</b>
-                                            <button type="button"
-                                                class="btn btn-primary btn-lg m-l-15 waves-effect">{{ $item->status_pengajuan }}</button>
                                         </div>
 
                                         {{-- <div class="col-sm-4">

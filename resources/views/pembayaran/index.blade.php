@@ -2,43 +2,6 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
-         
-            {{-- <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                FOTO RUMAH YANG DIAJUKAN
-                                <small>Pure css animations - <a href="https://daneden.github.io/animate.css/"
-                                        target="_blank">daneden.github.io/animate.css</a></small>
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <img src="{{ asset('template') }}/images/t120-bg.jpg"
-                              width="150" height="200"  class="js-animating-object img-responsive">
-                            <div class="demo-image-copyright">
-                                This image taken from <a href="{{ asset('template') }}/images/t120.jpg" target="_blank">Unsplash</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!-- Masked Input -->
-
             @if (auth()->user()->role == 'Admin')
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -111,8 +74,6 @@
                 <!-- #END# Contextual Classes -->
         </div>
 
-
-        </div>
     @elseif (auth()->user()->role == 'Guest')
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
