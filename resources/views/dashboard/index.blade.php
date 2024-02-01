@@ -158,7 +158,7 @@
     <script src="{{ asset('template') }}/js/demo.js"></script>
 
     <!-- Google Maps API Js -->
-    {{-- <script src="https://maps.google.com/maps/api/js?v=3&sensor=false"></script> --}}
+    <script src="https://maps.google.com/maps/api/js?v=3&sensor=false"></script>
 
     <!-- GMaps PLugin Js -->
     {{-- <script src="{{ asset('template/') }}/plugins/gmaps/gmaps.js"></script>
