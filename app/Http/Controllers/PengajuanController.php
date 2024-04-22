@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengajuan;
 use App\Models\Datarumah;
+use Illuminate\Support\Str;
 use App\Models\Pembayaran;
 use App\Models\User;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -23,7 +24,7 @@ class PengajuanController extends Controller
         $data_pengajuan_penghuni = Pengajuan::with('rumah', 'user')
             ->where('user_id', $authenticatedUserId)
             ->get();
-        $data_pengajuan_admin = Pengajuan::with('rumah', 'user')
+        $data_pengajuan_admin = Pengajuan::with('rumah', 'user',)
             ->get();
         return view('pengajuan.index', compact('data_user', 'data_rumah', 'data_pengajuan_penghuni', 'data_pengajuan_admin'));
     }
@@ -44,10 +45,15 @@ class PengajuanController extends Controller
 
     public function store(Request $request)
     {
-        $kode_pengajuan = IdGenerator::generate(['table' => 'pengajuan', 'field' => 'kode_pengajuan', 'length' => 10, 'prefix' => 'pengajuan']);
+        // Generate a random alphanumeric code
+        $randomCode = Str::random(6); // Adjust the length as needed
+
+        // Combine the random code with your numeric code
+        $kode_pengajuan = $randomCode;
+
         $this->validate($request, [
             'rumah_id' => 'required',
-            'price'=> 'required',
+            'price' => 'required',
             'jumlah_penghuni' => 'required|integer',
             'foto_kartu_penghuni' => 'required|file|image|mimes:jpg,jpeg,bmp,png',
         ]);
@@ -77,7 +83,7 @@ class PengajuanController extends Controller
             'rumah_id' => $request->rumah_id,
             'jumlah_penghuni' => $request->jumlah_penghuni,
             'kode_pengajuan' => $kode_pengajuan,
-            'status_pengajuan' => 'Belum Dikonfirmasi',
+            'status_pengajuan' => 'Menunggu Konfirmasi',
             'status_pembayaran' => 'Menunggu Konfirmasi',
             'catatan' => 'Menunggu Konfirmasi',
         ]);
@@ -107,9 +113,25 @@ class PengajuanController extends Controller
         // Atau Anda bisa menggunakan metode where
         // $data_user = User::where('id', $authenticatedUserId)->first();
 
-        return view('pengajuan.show', compact('data_user', 'data_rumah'));
+        $data_pengajuan = Pengajuan::with('rumah', 'user')
+            ->where('user_id', $id)
+            ->first();
+
+        return view('pengajuan.show', compact('data_user', 'data_rumah', 'data_pengajuan'));
     }
 
+    public function detail($id)
+    {
+        $data_rumah = Datarumah::with('type')->get();
+        $data_user = User::get();
+        $authenticatedUserId = Auth::id();
+        $data_pengajuan_penghuni = Pengajuan::with('rumah', 'user')
+            ->where('user_id', $authenticatedUserId)
+            ->get();
+        $data_pengajuan_admin = Pengajuan::with('rumah', 'user',)
+            ->get();
+        return view('pengajuan.index', compact('data_user', 'data_rumah', 'data_pengajuan_penghuni', 'data_pengajuan_admin'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -146,7 +168,7 @@ class PengajuanController extends Controller
                     $data_rumah->update([
                         'pengajuan_id' => $data_pengajuan->id,
                     ]);
-    
+
                     // Buat pembayaran jika status_pengajuan adalah 'DITERIMA'
                     // $authenticatedUserId = auth()->user()->id; // Gantilah ini sesuai dengan cara Anda mendapatkan user ID yang terautentikasi
                     // $kode_pengajuan = // Generate kode pengajuan sesuai kebutuhan Anda

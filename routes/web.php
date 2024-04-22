@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/pengajuan', PengajuanController::class);
     Route::resource('/keuangan', KeuanganController::class);
     Route::resource('/pembayaran', PembayaranController::class);
+    Route::get('/pengajuan_detail/{id}', [PengajuanController::class, 'detail'])->name('pengajuan.detail');
     
 });
 

@@ -29,8 +29,8 @@
     <!-- Animation Css -->
     <link href="{{ asset('template') }}/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    {{-- <!-- Sweetalert Css -->
-    <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" /> --}}
+     <!-- Sweetalert Css -->
+     <link href="{{ asset('template') }}/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
     <link href="{{ asset('template') }}/plugins/morrisjs/morris.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <link href="{{ asset('template') }}/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
         rel="stylesheet">
 
-    <!-- Sweetalert Css -->
-    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
@@ -301,8 +299,7 @@
     @yield('content')
     @stack('javascript')
 
-    <!-- SweetAlert Plugin Js -->
-    <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
+  
 
     <script>
         document.getElementById('logout-link').addEventListener('click', function(event) {

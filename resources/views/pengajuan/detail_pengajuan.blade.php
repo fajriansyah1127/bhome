@@ -50,14 +50,12 @@
                                                     <td>
                                                         <div class="button-demo">
                                                             <button type="button" class="btn btn-primary waves-effect"
-                                                                onclick="redirectToDetail('{{ route('pengajuan.show', ['pengajuan' => $data->user]) }}')">Detail</button>
+                                                                onclick="redirectToDetail('{{ route('pengajuan.show', ['pengajuan' => $data->id]) }}')">Detail</button>
 
-                                                            <button type="button" class="btn btn-success waves-effect"
-                                                                data-type="confirmsetuju">Setujui</button>
-                                                            <button class="btn btn-danger waves-effect" 
-                                                            data-id-pengajuan="2" data-type="confirmtolak">Tolak</button>
-                                                            <button class="tolakButton" data-id-pengajuan="2">Tolak Pengajuan</button>
-
+                                                            <button type="button"
+                                                                class="btn btn-success waves-effect">Setujui</button>
+                                                            <button class="btn btn-danger waves-effect"
+                                                                data-type="confirm">Tolak</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -111,6 +109,9 @@
                     </div>
                 @else
                     @foreach ($data_pengajuan_penghuni as $item)
+                        {{-- <div class="alert alert-success">
+                       Selamat Pengajuan Anda <b>Diterima</b> silahkan melakukan pembayaran ke rekening BNI Bhome 097201122 dengan nominal Rp.{{ $item->rumah->type->harga }} dan lakukan konfirmasi pembayaran dengan mengirim bukti pembayaran melalui <a href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pembayaran%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}." class="alert-link" target="_blank">link Ini</a>
+                    </div> --}}
                         <div class="alert alert-warning">
                             Pengajuan Anda sedang diperiksa mohon ditunggu sebentar, apabila tidak ada respon hingga 1x24
                             jam silahkan <a
@@ -327,11 +328,38 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        {{-- <div class="col-sm-4">
+                                            <b>Status Pembayaran</b>
+                                            <button type="button" class="btn btn-danger btn-lg m-l-15 waves-effect">BELUM
+                                                LUNAS Silahkan melakukan <br> pembayaran ke norek 11181027 BNI an
+                                                reg6</button>
+                                        </div> --}}
+
+                                        {{-- <div class="col-md-3">
+                                            <b>Catatan</b>
+                                            <button type="button"
+                                                class="btn btn-primary btn-lg m-l-15 waves-effect">{{ $item->catatan }}</button>
+                                        </div> --}}
+                                        {{-- <div class="col-md-3">
+                                                    <b>Serial Key</b>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">vpn_key</i>
+                                                        </span>
+                                                        <div class="form-line">
+                                                            <input type="text" class="form-control key"
+                                                                placeholder="Ex: XXX0-XXXX-XX00-0XXX">
+                                                        </div>
+                                                    </div>
+                                                </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
             </div>
+        </div>
+
         </div>
         @endforeach
         @endif

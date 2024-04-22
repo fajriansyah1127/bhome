@@ -3,32 +3,25 @@ $(function () {
         var type = $(this).data('type');
         if (type === 'basic') {
             showBasicMessage();
-        }
-        else if (type === 'with-title') {
+        } else if (type === 'with-title') {
             showWithTitleMessage();
-        }
-        else if (type === 'success') {
+        } else if (type === 'success') {
             showSuccessMessage();
-        }
-        else if (type === 'confirm') {
+        } else if (type === 'confirmsetuju') {
             showConfirmMessage();
-        }
-        else if (type === 'cancel') {
+        } else if (type === 'confirmtolak') {
+            showConfirmtolakMessage();
+        } else if (type === 'cancel') {
             showCancelMessage();
-        }
-        else if (type === 'with-custom-icon') {
+        } else if (type === 'with-custom-icon') {
             showWithCustomIconMessage();
-        }
-        else if (type === 'html-message') {
+        } else if (type === 'html-message') {
             showHtmlMessage();
-        }
-        else if (type === 'autoclose-timer') {
+        } else if (type === 'autoclose-timer') {
             showAutoCloseTimerMessage();
-        }
-        else if (type === 'prompt') {
+        } else if (type === 'prompt') {
             showPromptMessage();
-        }
-        else if (type === 'ajax-loader') {
+        } else if (type === 'ajax-loader') {
             showAjaxLoaderMessage();
         }
     });
@@ -49,8 +42,8 @@ function showSuccessMessage() {
 
 function showConfirmMessage() {
     swal({
-        title: "Are you sure?",
-        text: "You will not be able to recover this imaginary file!",
+        title: "Tolak Pengajuan?",
+        text: "Apakah anda akan menolak Pengajuan ini ?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -106,6 +99,43 @@ function showAutoCloseTimerMessage() {
     });
 }
 
+function showConfirmtolakMessage() {
+    var idPengajuan = $("#tolakButton").data("id-pengajuan");
+
+    swal({
+        title: "Tolak Pengajuan",
+        text: "Alasan Penolakan",
+        type: "input",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: "slide-from-top",
+        inputPlaceholder: "Write something"
+    }, function (inputValue) {
+        if (inputValue === false) return false;
+        if (inputValue === "") {
+            swal.showInputError("You need to write something!");
+            return false;
+        }
+        // Kirim data ke Laravel menggunakan metode PUT atau PATCH
+        $.ajax({
+            type: 'PUT', // atau 'PATCH'
+            url: '/pengajuan/2',
+            data: {
+                catatan: 'dsasdaasdsdadsa', // pastikan nama kolom sesuai
+                status_pengajuan: 'DITOLAK', // sesuaikan dengan kebutuhan Anda
+                // tambahkan data lainnya yang dibutuhkan
+            },
+            success: function (response) {
+                swal("Nice!", "Alasan Penolakan: " + inputValue, "success");
+            },
+            error: function (error) {
+                swal("Error!", "Gagal menyimpan pesan ke database", "error");
+            }
+        });
+    });
+}
+
+
 function showPromptMessage() {
     swal({
         title: "An input!",
@@ -118,7 +148,8 @@ function showPromptMessage() {
     }, function (inputValue) {
         if (inputValue === false) return false;
         if (inputValue === "") {
-            swal.showInputError("You need to write something!"); return false
+            swal.showInputError("You need to write something!");
+            return false
         }
         swal("Nice!", "You wrote: " + inputValue, "success");
     });
