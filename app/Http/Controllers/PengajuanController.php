@@ -25,6 +25,7 @@ class PengajuanController extends Controller
             ->where('user_id', $authenticatedUserId)
             ->get();
         $data_pengajuan_admin = Pengajuan::with('rumah', 'user',)
+            ->where('status_pengajuan', 'menunggu konfirmasi')
             ->get();
         return view('pengajuan.index', compact('data_user', 'data_rumah', 'data_pengajuan_penghuni', 'data_pengajuan_admin'));
     }
@@ -146,52 +147,50 @@ class PengajuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $request->all();
-        // Temukan data pengajuan dengan id yang sesuai
-        $data_pengajuan = Pengajuan::find($id);
+        // Validasi permintaan jika diperlukan
+        $validatedData = $request->validate([
+            'status_pengajuan' => 'required|in:SETUJU,TOLAK', // pastikan hanya disetujui atau ditolak
+            'catatan' => 'required|string|max:255', // validasi catatan
+        ]);
 
-        // Pastikan data pengajuan ada sebelum melanjutkan
-        if ($data_pengajuan) {
-            // Update data pengajuan
-            $data_pengajuan->update([
-                'catatan' => $request->input('catatan'),
-                'status_pengajuan' => $request->input('status_pengajuan'),
-            ]);
+        // Perbarui data pengajuan berdasarkan ID yang diberikan
+        $pengajuan = Pengajuan::findOrFail($id);
+        $pengajuan->status_pengajuan = $validatedData['status_pengajuan'];
+        $pengajuan->catatan = $validatedData['catatan'];
 
-            // Temukan data rumah berdasarkan kode_rumah
-            $data_rumah = Datarumah::where('kode_rumah', $request->input('kode_rumah'))->first();
-
-            // Pastikan data rumah ada sebelum melanjutkan
-            if ($data_rumah) {
-                // Jika catatan menunjukkan diterima, ubah pengajuan_id di tabel datarumah
-                if ($request->input('status_pengajuan') == 'DITERIMA') {
-                    $data_rumah->update([
-                        'pengajuan_id' => $data_pengajuan->id,
-                    ]);
-
-                    // Buat pembayaran jika status_pengajuan adalah 'DITERIMA'
-                    // $authenticatedUserId = auth()->user()->id; // Gantilah ini sesuai dengan cara Anda mendapatkan user ID yang terautentikasi
-                    // $kode_pengajuan = // Generate kode pengajuan sesuai kebutuhan Anda
-                    Pembayaran::create([
-                        'user_id' => $authenticatedUserId,
-                        'rumah_id' => $request->rumah_id,
-                        'pengajuan_id' => $data_pengajuan->id,
-                        'kode_pengajuan' => $kode_pengajuan,
-                        'status_pembayaran' => 'Menunggu Konfirmasi',
-                        'catatan' => 'Menunggu Konfirmasi',
-                    ]);
-                }
-                // Redirect dengan pesan sukses
-                return redirect()->route('data_rumah.index')->with(['success' => 'Data Berhasil Diupdate!']);
-            } else {
-                // Redirect dengan pesan error jika data rumah tidak ditemukan
-                return redirect()->route('pengajuan.index')->with(['error' => 'Data Rumah Tidak Ditemukan!']);
-            }
-        } else {
-            // Redirect dengan pesan error jika data pengajuan tidak ditemukan
-            return redirect()->route('data_rumah.index')->with(['error' => 'Data Pengajuan Tidak Ditemukan!']);
+        // Jika status pengajuan ditolak
+        if ($validatedData['status_pengajuan'] === 'TOLAK') {
+            // Set status pembayaran menjadi "tidak perlu"
+            $pengajuan->status_pembayaran = 'tidak perlu';
         }
+
+        $pengajuan->save();
+
+        // Kirim respons untuk menunjukkan kesuksesan
+        $data_pengajuan_admin = Pengajuan::with('rumah', 'user',)
+            ->where('status_pengajuan', 'menunggu konfirmasi')
+            ->get();
+        return view('pengajuan.index', compact('data_pengajuan_admin'));
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        // Validasi permintaan jika diperlukan
+        $validatedData = $request->validate([
+            'status_pembayaran' => 'required|in:Dikonfirmasi',
+        ]);
+
+        // Perbarui data pengajuan berdasarkan ID yang diberikan
+        $pengajuan = Pengajuan::findOrFail($id);
+        $pengajuan->status_pembayaran = $validatedData['status_pembayaran'];
+
+        $pengajuan->save();
+
+        // Redirect atau kirim respons untuk menunjukkan kesuksesan
+        return redirect()->route('pengajuan.index')->with('success', 'Status pembayaran berhasil diperbarui.');
+    }
+
+
 
 
 

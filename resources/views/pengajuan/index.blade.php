@@ -51,13 +51,6 @@
                                                         <div class="button-demo">
                                                             <button type="button" class="btn btn-primary waves-effect"
                                                                 onclick="redirectToDetail('{{ route('pengajuan.show', ['pengajuan' => $data->user]) }}')">Detail</button>
-
-                                                            <button type="button" class="btn btn-success waves-effect"
-                                                                data-type="confirmsetuju">Setujui</button>
-                                                            <button class="btn btn-danger waves-effect" 
-                                                            data-id-pengajuan="2" data-type="confirmtolak">Tolak</button>
-                                                            <button class="tolakButton" data-id-pengajuan="2">Tolak Pengajuan</button>
-
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -111,15 +104,37 @@
                     </div>
                 @else
                     @foreach ($data_pengajuan_penghuni as $item)
-                        <div class="alert alert-warning">
-                            Pengajuan Anda sedang diperiksa mohon ditunggu sebentar, apabila tidak ada respon hingga 1x24
-                            jam silahkan <a
-                                href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pengajuan%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}."
-                                class="alert-link" target="_blank">Klik link Ini</a>
-                        </div>
-                        {{-- <div class="alert alert-danger">
-                        You need to get <b>Google Map API Key</b> for display maps with <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" class="alert-link" target="_blank">this link</a> (Also you can find documentation on same page).
-                    </div> --}}
+                        @if ($item->status_pengajuan == 'SETUJU')
+                            @if ($item->status_pembayaran == 'Menunggu Konfirmasi')
+                                <div class="alert alert-success">
+                                    Selamat Pengajuan Anda <b>Diterima</b> silahkan melakukan pembayaran ke rekening BNI
+                                    Bhome
+                                    097201122 dengan nominal Rp.{{ $item->rumah->type->harga }} dan lakukan konfirmasi
+                                    pembayaran dengan mengirim bukti pembayaran melalui <a
+                                        href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pembayaran%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}."
+                                        class="alert-link" target="_blank">link Ini</a>
+                                </div>
+                            @elseif ($item->status_pembayaran == 'DIKONFIRMASI')
+                                <div class="alert alert-success">
+                                    Selamat Pembayaran Anda telah dikonfirmasi, silahkan datang ke kantor Telkom Property.
+                                </div>
+                            @endif
+                        @elseif ($item->status_pengajuan == 'TOLAK')
+                            <div class="alert alert-danger">
+                                Pengajuan Anda <b>Ditolak</b>. Anda perlu mendapatkan <b>Google Map API Key</b> untuk
+                                menampilkan peta dengan <a
+                                    href="https://developers.google.com/maps/documentation/javascript/get-api-key"
+                                    class="alert-link" target="_blank">link ini</a> (Anda juga dapat menemukan dokumentasi
+                                pada halaman yang sama).
+                            </div>
+                        @else
+                            <div class="alert alert-warning">
+                                Pengajuan Anda sedang diperiksa, mohon ditunggu sebentar. Apabila tidak ada respon hingga
+                                1x24 jam, silahkan <a
+                                    href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pengajuan%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}."
+                                    class="alert-link" target="_blank">klik link ini</a>.
+                            </div>
+                        @endif
                         <div class="card">
                             <div class="header">
                                 <h2>

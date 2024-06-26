@@ -33,13 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('/dashboard_penghuni', DashboardController::class);
     Route::resource('dashboard', DashboardController::class)->middleware(['auth', 'verified']);
     Route::resource('/type_rumah', TypeController::class);
-    Route::resource('/penghuni', PenghuniController::class)->Middleware('admin');
+    Route::resource('/penghuni', PenghuniController::class)->middleware('admin');
     Route::resource('/data_rumah', DataRumahController::class);
     Route::resource('/pengajuan', PengajuanController::class);
     Route::resource('/keuangan', KeuanganController::class);
     Route::resource('/pembayaran', PembayaranController::class);
     Route::get('/pengajuan_detail/{id}', [PengajuanController::class, 'detail'])->name('pengajuan.detail');
-    
+    // Route::put('/pengajuan/{id}', [PengajuanController::class, 'updateStatus'])->name('pembayaran.update');
 });
 
 require __DIR__ . '/auth.php';

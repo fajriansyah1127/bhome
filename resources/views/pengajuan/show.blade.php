@@ -36,9 +36,11 @@
                                 </ul>
                             </div>
                             <div class="body">
-                                <form id="form_advanced_validation" action="{{ route('pengajuan.store') }}"
+                                <form id="form_advanced_validation"
+                                    action="{{ route('pengajuan.update', $data_pengajuan->id) }}"
                                     enctype="multipart/form-data" method="POST">
                                     @csrf
+                                    @method('PUT')
                                     <div class="demo-masked-input">
                                         <div class="row clearfix">
                                             <div class="col-md-3">
@@ -49,8 +51,7 @@
                                                     </span>
                                                     <div>
                                                         <input type="text" name="kode_rumah" disabled
-                                                            value="{{ $data_pengajuan->rumah->kode_rumah }} "
-                                                            class="form-control">
+                                                            value="{{ $data_pengajuan->id }} " class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -242,15 +243,31 @@
                                             </div>
 
                                             <div class="col-sm-3">
+                                                <b>Status Pengajuan</b>
+                                                <select class="form-control show-tick" name="status_pengajuan">
+                                                    <option value="SETUJU">Setuju</option>
+                                                    <option value="TOLAK">Tolak</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="col-sm-3">
                                                 <b>Catatan</b>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="material-icons">note</i>
                                                     </span>
-                                                    <div>
-                                                        <input type="text" disabled class="form-control ip"
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" name="catatan"
                                                             value="{{ $data_pengajuan->catatan }}">
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <button class="btn btn-primary waves-effect"
+                                                        data-type="showConfirmtolakMessage" type="submit">SUBMIT</button>
                                                 </div>
                                             </div>
                                 </form>
@@ -532,4 +549,5 @@
 
     <!-- Demo Js -->
     <script src="{{ asset('template') }}/js/demo.js"></script>
+    <script src="{{ asset('template') }}/js/pages/ui/dialogs.js"></script>
 @endpush
