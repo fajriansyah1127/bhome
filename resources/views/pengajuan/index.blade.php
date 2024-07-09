@@ -114,9 +114,9 @@
                                         href="https://wa.me/6282350476227?text=Halo,%20saya%20mau%20mengkonfirmasi%20pembayaran%20sewa%20rumah%20atas%20nama%20{{ $item->user->name }}."
                                         class="alert-link" target="_blank">link Ini</a>
                                 </div>
-                            @elseif ($item->status_pembayaran == 'DIKONFIRMASI')
+                            @elseif ($item->status_pembayaran == 'Dikonfirmasi')
                                 <div class="alert alert-success">
-                                    Selamat Pembayaran Anda telah dikonfirmasi, silahkan datang ke kantor Telkom Property.
+                                    Selamat Pembayaran Anda telah dikonfirmasi, silahkan datang ke kantor Telkom Property untuk pengambilan kunci rumah.
                                 </div>
                             @endif
                         @elseif ($item->status_pengajuan == 'TOLAK')
@@ -310,10 +310,12 @@
                                                 <span class="input-group-addon">
                                                     <i class="material-icons">image</i>
                                                 </span>
-                                                <a href="{{ asset('template') }}/images/image-gallery/1.jpg"
-                                                    target="_blank" data-sub-html="Demo Description">
-                                                    Foto Kartu Pegawai
+                                                <a href="{{ asset('foto_penghuni/' . $item->foto) }}" target="_blank"
+                                                    data-sub-html="Demo Description">
+                                                    <img src="{{ asset('foto_penghuni/' . $item->foto) }}"
+                                                        alt="Foto Kartu Pegawai" style="width: 100px;">
                                                 </a>
+
                                             </div>
                                         </div>
 
